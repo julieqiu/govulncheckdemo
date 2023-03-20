@@ -1,0 +1,22 @@
+govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+
+Using go1.20.2 and govulncheck@v0.0.0 with
+vulnerability data from https://vuln.go.dev (last modified 15 Mar 23 23:31 UTC).
+
+Scanning your code and 46 packages across 1 dependent module for known vulnerabilities...
+No vulnerabilities found.
+
+=== Informational ===
+
+Found 1 vulnerability in packages that you import, but there are no call
+stacks leading to the use of this vulnerability. You may not need to
+take any action. See https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
+for details.
+
+Vulnerability #1: GO-2022-1059
+  An attacker may cause a denial of service by crafting an
+  Accept-Language header which ParseAcceptLanguage will take
+  significant time to parse.
+  More info: https://pkg.go.dev/vuln/GO-2022-1059
+  Found in: golang.org/x/text@v0.3.7
+  Fixed in: golang.org/x/text@v0.3.8

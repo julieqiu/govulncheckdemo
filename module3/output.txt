@@ -1,0 +1,23 @@
+govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+
+Using go1.20.2 and govulncheck@v0.0.0 with
+vulnerability data from https://vuln.go.dev (last modified 15 Mar 23 23:31 UTC).
+
+Scanning your code and 128 packages across 1 dependent module for known vulnerabilities...
+Your code is affected by 1 vulnerability from 1 module.
+
+Vulnerability #1: GO-2020-0040
+  Due to unchecked type assertions, maliciously crafted messages
+  can cause panics, which may be used as a denial of service
+  vector.
+
+  More info: https://pkg.go.dev/vuln/GO-2020-0040
+
+  Module: github.com/shiyanhui/dht
+    Found in: github.com/shiyanhui/dht@v0.0.0-20201219151056-5a20f3199263
+    Fixed in: N/A
+
+    Call stacks in your code:
+      main.go:14:14: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.New
+      main.go:25:2: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.GetPeers
+      main.go:42:7: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.Run

@@ -1,0 +1,7 @@
+govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+
+Using go1.20.2 and govulncheck@v0.0.0 with
+vulnerability data from https://vuln.go.dev (last modified 15 Mar 23 23:31 UTC).
+
+Scanning your code and 46 packages across 1 dependent module for known vulnerabilities...
+No vulnerabilities found.
