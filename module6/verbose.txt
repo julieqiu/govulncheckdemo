@@ -1,0 +1,1290 @@
+govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+
+Using go1.18 and govulncheck@v0.0.0 with
+vulnerability data from https://vuln.go.dev (last modified 15 Mar 23 23:31 UTC).
+
+Scanning your code and 122 packages across 0 dependent modules for known vulnerabilities...
+Your code is affected by 7 vulnerabilities from the Go standard library.
+
+Vulnerability #1: GO-2023-1571
+  A maliciously crafted HTTP/2 stream could cause excessive CPU
+  consumption in the HPACK decoder, sufficient to cause a denial
+  of service from a small number of small requests.
+
+  More info: https://pkg.go.dev/vuln/GO-2023-1571
+
+  Standard library
+    Found in: net/http@go1.18
+    Fixed in: net/http@go1.20.1
+
+    Call stacks in your code:
+      #1: for function Get
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+      #2: for function Transport.onceSetNextProtoDefaults
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net/http.Transport.onceSetNextProtoDefaults
+      #3: for function body.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.body.Read
+      #4: for function bodyEOFSignal.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.bodyEOFSignal.Read
+      #5: for function cancelTimerBody.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.cancelTimerBody.Read
+      #6: for function defaultTransportDialContext
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:45:42
+        net/http.defaultTransportDialContext
+      #7: for function gzipReader.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.gzipReader.Read
+      #8: for function headerSorter.Len
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+        net.init
+        net.init#1
+            /Users/julieqiu/sdk/go1.18/src/net/addrselect.go:277:11
+        sort.Sort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:230:15
+        net/http.headerSorter.Len
+      #9: for function headerSorter.Less
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+        net.init
+        net.init#1
+            /Users/julieqiu/sdk/go1.18/src/net/addrselect.go:277:11
+        sort.Sort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:231:11
+        sort.quickSort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:218:16
+        net/http.headerSorter.Less
+      #10: for function headerSorter.Swap
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+        net.init
+        net.init#1
+            /Users/julieqiu/sdk/go1.18/src/net/addrselect.go:277:11
+        sort.Sort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:231:11
+        sort.quickSort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:219:14
+        net/http.headerSorter.Swap
+      #11: for function http2ConnectionError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2ConnectionError.Error
+      #12: for function http2FrameHeader.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:626:25
+        net/http.http2FrameHeader.String
+      #13: for function http2ErrCode.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:626:25
+        net/http.http2ErrCode.String
+      #14: for function http2FrameType.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:626:25
+        net/http.http2FrameType.String
+      #15: for function http2GoAwayError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2GoAwayError.Error
+      #16: for function http2Setting.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:626:25
+        net/http.http2Setting.String
+      #17: for function http2SettingID.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:626:25
+        net/http.http2SettingID.String
+      #18: for function http2StreamError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2StreamError.Error
+      #19: for function http2Transport.initConnPool
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net/http.http2Transport.initConnPool
+      #20: for function http2connError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2connError.Error
+      #21: for function http2duplicatePseudoHeaderError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2duplicatePseudoHeaderError.Error
+      #22: for function http2gzipReader.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.http2gzipReader.Read
+      #23: for function http2headerFieldNameError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2headerFieldNameError.Error
+      #24: for function http2headerFieldValueError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2headerFieldValueError.Error
+      #25: for function http2httpError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2httpError.Error
+      #26: for function http2httpError.Temporary
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1284:25
+        crypto/tls.Conn.readRecord
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:581:26
+        crypto/tls.Conn.readRecordOrCCS
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:620:51
+        net/http.http2httpError.Temporary
+      #27: for function http2missingBody.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.http2missingBody.Read
+      #28: for function http2noCachedConnError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2noCachedConnError.Error
+      #29: for function http2pseudoHeaderError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.http2pseudoHeaderError.Error
+      #30: for function http2serverConn.sendServeMsg
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net/http.startGracefulShutdown$1
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:5028:45
+        net/http.http2serverConn.sendServeMsg
+      #31: for function http2sorter.Len
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+        net.init
+        net.init#1
+            /Users/julieqiu/sdk/go1.18/src/net/addrselect.go:277:11
+        sort.Sort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:230:15
+        net/http.http2sorter.Len
+      #32: for function http2sorter.Less
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+        net.init
+        net.init#1
+            /Users/julieqiu/sdk/go1.18/src/net/addrselect.go:277:11
+        sort.Sort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:231:11
+        sort.quickSort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:218:16
+        net/http.http2sorter.Less
+      #33: for function http2sorter.Swap
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+        net.init
+        net.init#1
+            /Users/julieqiu/sdk/go1.18/src/net/addrselect.go:277:11
+        sort.Sort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:231:11
+        sort.quickSort
+            /Users/julieqiu/sdk/go1.18/src/sort/sort.go:219:14
+        net/http.http2sorter.Swap
+      #34: for function http2transportResponseBody.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.http2transportResponseBody.Read
+      #35: for function http2writeData.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:626:25
+        net/http.http2writeData.String
+      #36: for function httpError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.httpError.Error
+      #37: for function httpError.Temporary
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1284:25
+        crypto/tls.Conn.readRecord
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:581:26
+        crypto/tls.Conn.readRecordOrCCS
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:620:51
+        net/http.httpError.Temporary
+      #38: for function isNotToken
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net/http.envProxyFunc$1
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:822:60
+        vendor/golang.org/x/net/http/httpproxy.Config.ProxyFunc
+            /Users/julieqiu/sdk/go1.18/src/vendor/golang.org/x/net/http/httpproxy/proxy.go:123:11
+        vendor/golang.org/x/net/http/httpproxy.config.init
+            /Users/julieqiu/sdk/go1.18/src/vendor/golang.org/x/net/http/httpproxy/proxy.go:217:40
+        strings.TrimSpace
+            /Users/julieqiu/sdk/go1.18/src/strings/strings.go:948:19
+        strings.TrimFunc
+            /Users/julieqiu/sdk/go1.18/src/strings/strings.go:758:35
+        strings.TrimLeftFunc
+            /Users/julieqiu/sdk/go1.18/src/strings/strings.go:735:16
+        strings.indexFunc
+            /Users/julieqiu/sdk/go1.18/src/strings/strings.go:778:7
+        net/http.isNotToken
+      #39: for function noBody.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.noBody.Read
+      #40: for function persistConn.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        bufio.Reader.Read
+            /Users/julieqiu/sdk/go1.18/src/bufio/bufio.go:222:24
+        net/http.persistConn.Read
+      #41: for function readWriteCloserBody.Read
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        net/http.readWriteCloserBody.Read
+      #42: for function socksAddr.String
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net.OpError.Error
+            /Users/julieqiu/sdk/go1.18/src/net/net.go:477:29
+        net/http.socksAddr.String
+      #43: for function tlsHandshakeTimeoutError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.tlsHandshakeTimeoutError.Error
+      #44: for function tlsHandshakeTimeoutError.Temporary
+        github.com/julieqiu/govulncheckdemo/module6.init
+        net/http.init
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3013:37
+        os.Getenv
+            /Users/julieqiu/sdk/go1.18/src/os/env.go:103:24
+        syscall.Getenv
+            /Users/julieqiu/sdk/go1.18/src/syscall/env_unix.go:75:12
+        sync.Once.Do
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:59:11
+        sync.Once.doSlow
+            /Users/julieqiu/sdk/go1.18/src/sync/once.go:68:4
+        net.readServices
+            /Users/julieqiu/sdk/go1.18/src/net/port_unix.go:25:31
+        net.file.readLine
+            /Users/julieqiu/sdk/go1.18/src/net/parse.go:55:24
+        io.ReadFull
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:350:20
+        io.ReadAtLeast
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:331:19
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1284:25
+        crypto/tls.Conn.readRecord
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:581:26
+        crypto/tls.Conn.readRecordOrCCS
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:620:51
+        net/http.tlsHandshakeTimeoutError.Temporary
+      #45: for function transportReadFromServerError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.transportReadFromServerError.Error
+      #46: for function unsupportedTEError.Error
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:11:14
+        fmt.Println
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:274:17
+        fmt.Fprintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:264:13
+        fmt.pp.doPrintln
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:1169:13
+        fmt.pp.printArg
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:702:22
+        fmt.pp.handleMethods
+            /Users/julieqiu/sdk/go1.18/src/fmt/print.go:620:24
+        net/http.unsupportedTEError.Error
+
+Vulnerability #2: GO-2023-1570
+  Large handshake records may cause panics in crypto/tls. Both
+  clients and servers may send large TLS handshake records which
+  cause servers and clients, respectively, to panic when
+  attempting to construct responses. This affects all TLS 1.3
+  clients, TLS 1.2 clients which explicitly enable session
+  resumption (by setting Config.ClientSessionCache to a non-nil
+  value), and TLS 1.3 servers which request client certificates
+  (by setting Config.ClientAuth >= RequestClientCert).
+
+  More info: https://pkg.go.dev/vuln/GO-2023-1570
+
+  Standard library
+    Found in: crypto/tls@go1.18
+    Fixed in: crypto/tls@go1.20.1
+
+    Call stacks in your code:
+      #1: for function Conn.Read
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:707:13
+        io.CopyN
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:361:21
+        io.Copy
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:385:19
+        io.copyBuffer
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:426:21
+        crypto/tls.Conn.Read
+      #2: for function Conn.Write
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:709:19
+        net/http.http2transportResponseBody.Close
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:9176:14
+        bufio.Writer.Flush
+            /Users/julieqiu/sdk/go1.18/src/bufio/bufio.go:628:22
+        crypto/tls.Conn.Write
+      #3: for function Dialer.DialContext
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:725:36
+        net/http.Client.send
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:176:30
+        net/http.send
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:252:26
+        net/http.Transport.RoundTrip
+            /Users/julieqiu/sdk/go1.18/src/net/http/roundtrip.go:17:20
+        net/http.Transport.roundTrip
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:539:34
+        net/http.http2noDialH2RoundTripper.RoundTrip
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:9677:41
+        net/http.http2Transport.RoundTrip
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:7174:23
+        net/http.http2Transport.RoundTripOpt
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:7206:40
+        net/http.http2clientConnPool.GetClientConn
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:776:24
+        net/http.http2clientConnPool.getClientConn
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:790:32
+        net/http.http2Transport.dialClientConn
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:7308:30
+        net/http.dialTLS$1
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:7334:37
+        net/http.http2Transport.dialTLSWithContext
+            /Users/julieqiu/sdk/go1.18/src/net/http/h2_bundle.go:3005:31
+        crypto/tls.Dialer.DialContext
+
+Vulnerability #3: GO-2022-0525
+  The HTTP/1 client accepted some invalid Transfer-Encoding
+  headers as indicating a "chunked" encoding. This could
+  potentially allow for request smuggling, but only if combined
+  with an intermediate server that also improperly failed to
+  reject the header as invalid.
+
+  More info: https://pkg.go.dev/vuln/GO-2022-0525
+
+  Standard library
+    Found in: net/http@go1.18
+    Fixed in: net/http@go1.18.4
+
+    Call stacks in your code:
+      #1: for function transferReader.parseTransferEncoding
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:725:36
+        net/http.Client.send
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:176:30
+        net/http.send
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:252:26
+        net/http.Transport.RoundTrip
+            /Users/julieqiu/sdk/go1.18/src/net/http/roundtrip.go:17:20
+        net/http.Transport.roundTrip
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:604:22
+        net/http.Transport.decConnsPerHost
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:1487:5
+        net/http.Transport.dialConnFor
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:1449:23
+        net/http.Transport.dialConn
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:1697:3
+        net/http.dialConn$3
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:1706:28
+        net/http.ReadResponse
+            /Users/julieqiu/sdk/go1.18/src/net/http/response.go:199:20
+        net/http.readTransfer
+            /Users/julieqiu/sdk/go1.18/src/net/http/transfer.go:519:35
+        net/http.transferReader.parseTransferEncoding
+
+Vulnerability #4: GO-2022-0524
+  Calling Reader.Read on an archive containing a large number of
+  concatenated 0-length compressed files can cause a panic due to
+  stack exhaustion.
+
+  More info: https://pkg.go.dev/vuln/GO-2022-0524
+
+  Standard library
+    Found in: compress/gzip@go1.18
+    Fixed in: compress/gzip@go1.18.4
+
+    Call stacks in your code:
+      #1: for function Reader.Read
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:707:13
+        io.CopyN
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:361:21
+        io.Copy
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:385:19
+        io.copyBuffer
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:426:21
+        net/http.gzipReader.Read
+            /Users/julieqiu/sdk/go1.18/src/net/http/transport.go:2838:19
+        compress/gzip.Reader.Read
+
+Vulnerability #5: GO-2022-0520
+  Client IP adresses may be unintentionally exposed via
+  X-Forwarded-For headers. When httputil.ReverseProxy.ServeHTTP is
+  called with a Request.Header map containing a nil value for the
+  X-Forwarded-For header, ReverseProxy sets the client IP as the
+  value of the X-Forwarded-For header, contrary to its
+  documentation. In the more usual case where a Director function
+  sets the X-Forwarded-For header value to nil, ReverseProxy
+  leaves the header unmodified as expected.
+
+  More info: https://pkg.go.dev/vuln/GO-2022-0520
+
+  Standard library
+    Found in: net/http@go1.18
+    Fixed in: net/http@go1.18.4
+
+    Call stacks in your code:
+      #1: for function Header.Clone
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:614:38
+        net/http.Client.makeHeadersCopier
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:754:31
+        net/http.cloneOrMakeHeader
+            /Users/julieqiu/sdk/go1.18/src/net/http/clone.go:69:20
+        net/http.Header.Clone
+
+Vulnerability #6: GO-2022-0435
+  A crafted scalar input longer than 32 bytes can cause
+  P256().ScalarMult or P256().ScalarBaseMult to panic. Indirect
+  uses through crypto/ecdsa and crypto/tls are unaffected. amd64,
+  arm64, ppc64le, and s390x are unaffected.
+
+  More info: https://pkg.go.dev/vuln/GO-2022-0435
+
+  Standard library
+    Found in: crypto/elliptic@go1.18
+    Fixed in: crypto/elliptic@go1.18.1
+
+    Call stacks in your code:
+      #1: for function p256Curve.CombinedMult
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:707:13
+        io.CopyN
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:361:21
+        io.Copy
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:385:19
+        io.copyBuffer
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:426:21
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1288:42
+        crypto/tls.Conn.handlePostHandshakeMessage
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1211:31
+        crypto/tls.Conn.handleRenegotiation
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1201:39
+        crypto/tls.Conn.clientHandshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client.go:219:22
+        crypto/tls.clientHandshakeStateTLS13.handshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client_tls13.go:87:36
+        crypto/tls.clientHandshakeStateTLS13.readServerCertificate
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client_tls13.go:486:36
+        crypto/tls.verifyHandshakeSignature
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/auth.go:29:23
+        crypto/ecdsa.VerifyASN1
+            /Users/julieqiu/sdk/go1.18/src/crypto/ecdsa/ecdsa.go:353:15
+        crypto/ecdsa.Verify
+            /Users/julieqiu/sdk/go1.18/src/crypto/ecdsa/ecdsa.go:302:15
+        crypto/ecdsa.verify
+            /Users/julieqiu/sdk/go1.18/src/crypto/ecdsa/ecdsa_noasm.go:20:22
+        crypto/ecdsa.verifyGeneric
+            /Users/julieqiu/sdk/go1.18/src/crypto/ecdsa/ecdsa.go:324:26
+        crypto/elliptic.p256Curve.CombinedMult
+      #2: for function p256Curve.ScalarBaseMult
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:707:13
+        io.CopyN
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:361:21
+        io.Copy
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:385:19
+        io.copyBuffer
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:426:21
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1288:42
+        crypto/tls.Conn.handlePostHandshakeMessage
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1211:31
+        crypto/tls.Conn.handleRenegotiation
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1201:39
+        crypto/tls.Conn.clientHandshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client.go:154:46
+        crypto/tls.Conn.makeClientHello
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client.go:135:40
+        crypto/tls.generateECDHEParameters
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/key_schedule.go:132:52
+        crypto/elliptic.GenerateKey
+            /Users/julieqiu/sdk/go1.18/src/crypto/elliptic/elliptic.go:355:30
+        crypto/elliptic.p256Curve.ScalarBaseMult
+      #3: for function p256Curve.ScalarMult
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:707:13
+        io.CopyN
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:361:21
+        io.Copy
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:385:19
+        io.copyBuffer
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:426:21
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1288:42
+        crypto/tls.Conn.handlePostHandshakeMessage
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1211:31
+        crypto/tls.Conn.handleRenegotiation
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1201:39
+        crypto/tls.Conn.clientHandshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client.go:219:22
+        crypto/tls.clientHandshakeStateTLS13.handshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client_tls13.go:81:37
+        crypto/tls.clientHandshakeStateTLS13.establishHandshakeKeys
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client_tls13.go:347:39
+        crypto/tls.nistParameters.SharedKey
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/key_schedule.go:175:32
+        crypto/elliptic.p256Curve.ScalarMult
+
+Vulnerability #7: GO-2022-0434
+  Verifying certificate chains containing certificates which are
+  not compliant with RFC 5280 causes Certificate.Verify to panic
+  on macOS. These chains can be delivered through TLS and can
+  cause a crypto/tls or net/http client to crash.
+
+  More info: https://pkg.go.dev/vuln/GO-2022-0434
+
+  Standard library
+    Found in: crypto/x509@go1.18
+    Fixed in: crypto/x509@go1.18.1
+    Platforms: darwin
+
+    Call stacks in your code:
+      #1: for function Certificate.Verify
+        github.com/julieqiu/govulncheckdemo/module6.main
+            main.go:9:20
+        net/http.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:449:26
+        net/http.Client.Get
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:480:13
+        net/http.Client.Do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:593:13
+        net/http.Client.do
+            /Users/julieqiu/sdk/go1.18/src/net/http/client.go:707:13
+        io.CopyN
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:361:21
+        io.Copy
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:385:19
+        io.copyBuffer
+            /Users/julieqiu/sdk/go1.18/src/io/io.go:426:21
+        crypto/tls.Conn.Read
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1288:42
+        crypto/tls.Conn.handlePostHandshakeMessage
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1211:31
+        crypto/tls.Conn.handleRenegotiation
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/conn.go:1201:39
+        crypto/tls.Conn.clientHandshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client.go:219:22
+        crypto/tls.clientHandshakeStateTLS13.handshake
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client_tls13.go:87:36
+        crypto/tls.clientHandshakeStateTLS13.readServerCertificate
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client_tls13.go:457:37
+        crypto/tls.Conn.verifyServerCertificate
+            /Users/julieqiu/sdk/go1.18/src/crypto/tls/handshake_client.go:868:42
+        crypto/x509.Certificate.Verify
+
+=== Informational ===
+
+Found 14 vulnerabilities in packages that you import, but there are no call
+stacks leading to the use of these vulnerabilities. You may not need to
+take any action. See https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
+for details.
+
+Vulnerability #1: GO-2023-1569
+  A denial of service is possible from excessive resource
+  consumption in net/http and mime/multipart. Multipart form
+  parsing with mime/multipart.Reader.ReadForm can consume largely
+  unlimited amounts of memory and disk files. This also affects
+  form parsing in the net/http package with the Request methods
+  FormFile, FormValue, ParseMultipartForm, and PostFormValue.
+  ReadForm takes a maxMemory parameter, and is documented as
+  storing "up to maxMemory bytes +10MB (reserved for non-file
+  parts) in memory". File parts which cannot be stored in memory
+  are stored on disk in temporary files. The unconfigurable 10MB
+  reserved for non-file parts is excessively large and can
+  potentially open a denial of service vector on its own. However,
+  ReadForm did not properly account for all memory consumed by a
+  parsed form, such as map entry overhead, part names, and MIME
+  headers, permitting a maliciously crafted form to consume well
+  over 10MB. In addition, ReadForm contained no limit on the
+  number of disk files created, permitting a relatively small
+  request body to create a large number of disk temporary files.
+  With fix, ReadForm now properly accounts for various forms of
+  memory overhead, and should now stay within its documented limit
+  of 10MB + maxMemory bytes of memory consumption. Users should
+  still be aware that this limit is high and may still be
+  hazardous. In addition, ReadForm now creates at most one on-disk
+  temporary file, combining multiple form parts into a single
+  temporary file. The mime/multipart.File interface type's
+  documentation states, "If stored on disk, the File's underlying
+  concrete type will be an *os.File.". This is no longer the case
+  when a form contains more than one file part, due to this
+  coalescing of parts into a single file. The previous behavior of
+  using distinct files for each form part may be reenabled with
+  the environment variable GODEBUG=multipartfiles=distinct. Users
+  should be aware that multipart.ReadForm and the http.Request
+  methods that call it do not limit the amount of disk consumed by
+  temporary files. Callers can limit the size of form data with
+  http.MaxBytesReader.
+  More info: https://pkg.go.dev/vuln/GO-2023-1569
+  Found in: mime/multipart@go1.18
+  Fixed in: mime/multipart@go1.20.1
+
+Vulnerability #2: GO-2023-1568
+  A path traversal vulnerability exists in filepath.Clean on
+  Windows. On Windows, the filepath.Clean function could transform
+  an invalid path such as "a/../c:/b" into the valid path "c:\b".
+  This transformation of a relative (if invalid) path into an
+  absolute path could enable a directory traversal attack. After
+  fix, the filepath.Clean function transforms this path into the
+  relative (but still invalid) path ".\c:\b".
+  More info: https://pkg.go.dev/vuln/GO-2023-1568
+  Found in: path/filepath@go1.18
+  Fixed in: path/filepath@go1.20.1
+  Platforms: windows
+
+Vulnerability #3: GO-2022-1144
+  An attacker can cause excessive memory growth in a Go server
+  accepting HTTP/2 requests. HTTP/2 server connections contain a
+  cache of HTTP header keys sent by the client. While the total
+  number of entries in this cache is capped, an attacker sending
+  very large keys can cause the server to allocate approximately
+  64 MiB per open connection.
+  More info: https://pkg.go.dev/vuln/GO-2022-1144
+  Found in: net/http@go1.18
+  Fixed in: net/http@go1.19.4
+
+Vulnerability #4: GO-2022-1143
+  On Windows, restricted files can be accessed via os.DirFS and
+  http.Dir. The os.DirFS function and http.Dir type provide access
+  to a tree of files rooted at a given directory. These functions
+  permit access to Windows device files under that root. For
+  example, os.DirFS("C:/tmp").Open("COM1") opens the COM1 device.
+  Both os.DirFS and http.Dir only provide read-only filesystem
+  access. In addition, on Windows, an os.DirFS for the directory
+  (the root of the current drive) can permit a maliciously crafted
+  path to escape from the drive and access any path on the system.
+  With fix applied, the behavior of os.DirFS("") has changed.
+  Previously, an empty root was treated equivalently to "/", so
+  os.DirFS("").Open("tmp") would open the path "/tmp". This now
+  returns an error.
+  More info: https://pkg.go.dev/vuln/GO-2022-1143
+  Found in: net/http@go1.18
+  Fixed in: net/http@go1.19.4
+  Platforms: windows
+
+Vulnerability #5: GO-2022-1095
+  Due to unsanitized NUL values, attackers may be able to
+  maliciously set environment variables on Windows. In
+  syscall.StartProcess and os/exec.Cmd, invalid environment
+  variable values containing NUL values are not properly checked
+  for. A malicious environment variable value can exploit this
+  behavior to set a value for a different environment variable.
+  For example, the environment variable string "A=B\x00C=D" sets
+  the variables "A=B" and "C=D".
+  More info: https://pkg.go.dev/vuln/GO-2022-1095
+  Found in: syscall@go1.18
+  Fixed in: syscall@go1.19.3
+  Platforms: windows
+
+Vulnerability #6: GO-2022-0969
+  HTTP/2 server connections can hang forever waiting for a clean
+  shutdown that was preempted by a fatal error. This condition can
+  be exploited by a malicious client to cause a denial of service.
+  More info: https://pkg.go.dev/vuln/GO-2022-0969
+  Found in: net/http@go1.18
+  Fixed in: net/http@go1.19.1
+
+Vulnerability #7: GO-2022-0537
+  Decoding big.Float and big.Rat types can panic if the encoded
+  message is too short, potentially allowing a denial of service.
+  More info: https://pkg.go.dev/vuln/GO-2022-0537
+  Found in: math/big@go1.18
+  Fixed in: math/big@go1.18.5
+
+Vulnerability #8: GO-2022-0533
+  On Windows, the filepath.Clean function can convert certain
+  invalid paths to valid, absolute paths, potentially allowing a
+  directory traversal attack. For example, Clean(`.\c:`) returns
+  `c:`.
+  More info: https://pkg.go.dev/vuln/GO-2022-0533
+  Found in: path/filepath@go1.18
+  Fixed in: path/filepath@go1.18.3
+  Platforms: windows
+
+Vulnerability #9: GO-2022-0531
+  An attacker can correlate a resumed TLS session with a previous
+  connection. Session tickets generated by crypto/tls do not
+  contain a randomly generated ticket_age_add, which allows an
+  attacker that can observe TLS handshakes to correlate successive
+  connections by comparing ticket ages during session resumption.
+  More info: https://pkg.go.dev/vuln/GO-2022-0531
+  Found in: crypto/tls@go1.18
+  Fixed in: crypto/tls@go1.18.3
+
+Vulnerability #10: GO-2022-0527
+  Calling Glob on a path which contains a large number of path
+  separators can cause a panic due to stack exhaustion.
+  More info: https://pkg.go.dev/vuln/GO-2022-0527
+  Found in: io/fs@go1.18
+  Fixed in: io/fs@go1.18.4
+
+Vulnerability #11: GO-2022-0522
+  Calling Glob on a path which contains a large number of path
+  separators can cause a panic due to stack exhaustion.
+  More info: https://pkg.go.dev/vuln/GO-2022-0522
+  Found in: path/filepath@go1.18
+  Fixed in: path/filepath@go1.18.4
+
+Vulnerability #12: GO-2022-0493
+  When called with a non-zero flags parameter, the Faccessat
+  function can incorrectly report that a file is accessible.
+  More info: https://pkg.go.dev/vuln/GO-2022-0493
+  Found in: syscall@go1.18
+  Fixed in: syscall@go1.18.2
+
+Vulnerability #13: GO-2022-0477
+  On Windows, rand.Read will hang indefinitely if passed a buffer
+  larger than 1 << 32 - 1 bytes.
+  More info: https://pkg.go.dev/vuln/GO-2022-0477
+  Found in: crypto/rand@go1.18
+  Fixed in: crypto/rand@go1.18.3
+  Platforms: windows
+
+Vulnerability #14: GO-2022-0433
+  encoding/pem in Go before 1.17.9 and 1.18.x before 1.18.1 has a
+  Decode stack overflow via a large amount of PEM data.
+  More info: https://pkg.go.dev/vuln/GO-2022-0433
+  Found in: encoding/pem@go1.18
+  Fixed in: encoding/pem@go1.18.1

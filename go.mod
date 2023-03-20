@@ -10,4 +10,5 @@ require (
 require (
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
+	golang.org/dl v0.0.0-20230307162516-8f1b16c06e73 // indirect
 )
