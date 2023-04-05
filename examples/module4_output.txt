@@ -1,7 +1,7 @@
 govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
 
-Using go1.20.2 and govulncheck@v0.0.0 with
-vulnerability data from https://vuln.go.dev (last modified 15 Mar 23 23:31 UTC).
+Using go1.20.2 and govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035 with
+vulnerability data from https://vuln.go.dev (last modified 2023-04-04 16:44:08 +0000 UTC).
 
 Scanning your code and 81 packages across 3 dependent modules for known vulnerabilities...
 Your code is affected by 2 vulnerabilities from 2 modules.
@@ -18,10 +18,7 @@ Vulnerability #1: GO-2021-0076
     Fixed in: github.com/evanphx/json-patch@v3.0.1-0.20180525145409-4c9aadca8f89
 
     Call stacks in your code:
-      #1: for function Patch.Apply
-        github.com/julieqiu/govulncheckdemo/module4.main
-            main.go:26:21
-        github.com/evanphx/json-patch.Patch.Apply
+      main.go:26:21: github.com/julieqiu/govulncheckdemo/module4.main calls github.com/evanphx/json-patch.Patch.Apply
 
 Vulnerability #2: GO-2020-0015
   An attacker could provide a single byte to a UTF16 decoder
@@ -37,7 +34,4 @@ Vulnerability #2: GO-2020-0015
     Fixed in: golang.org/x/text@v0.3.3
 
     Call stacks in your code:
-      #1: for function bomOverride.Transform
-        github.com/julieqiu/govulncheckdemo/module4.main
-            main.go:17:29
-        golang.org/x/text/encoding/unicode.bomOverride.Transform
+      main.go:17:29: github.com/julieqiu/govulncheckdemo/module4.main calls golang.org/x/text/encoding/unicode.bomOverride.Transform

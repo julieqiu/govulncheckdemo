@@ -1,0 +1,15 @@
+{
+  "config": {
+    "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
+    "data_source": "https://vuln.go.dev",
+    "last_modified": "2023-04-04T16:44:08Z",
+    "go_version": "go1.20.2",
+    "analysis": "Source",
+    "callstack_mode": "Compact"
+  }
+}
+{
+  "progress": {
+    "message": "Scanning your code and 125 packages across 0 dependent modules for known vulnerabilities..."
+  }
+}

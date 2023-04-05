@@ -1,0 +1,172 @@
+{
+  "config": {
+    "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
+    "data_source": "https://vuln.go.dev",
+    "last_modified": "2023-04-04T16:44:08Z",
+    "go_version": "go1.20.2",
+    "analysis": "Source",
+    "callstack_mode": "Compact"
+  }
+}
+{
+  "progress": {
+    "message": "Scanning your code and 128 packages across 1 dependent module for known vulnerabilities..."
+  }
+}
+{
+  "vulnerability": {
+    "osv": {
+      "schema_version": "1.3.1",
+      "id": "GO-2020-0040",
+      "modified": "2023-04-03T15:57:51Z",
+      "published": "2021-04-14T20:04:52Z",
+      "aliases": [
+        "CVE-2020-36562",
+        "GHSA-p6fg-723f-hgpw"
+      ],
+      "details": "Due to unchecked type assertions, maliciously crafted messages can cause panics, which may be used as a denial of service vector.",
+      "affected": [
+        {
+          "package": {
+            "name": "github.com/shiyanhui/dht",
+            "ecosystem": "Go"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "imports": [
+              {
+                "path": "github.com/shiyanhui/dht"
+              }
+            ]
+          }
+        }
+      ],
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/shiyanhui/dht/issues/57"
+        }
+      ],
+      "credits": [
+        {
+          "name": "@hMihaiDavid"
+        }
+      ],
+      "database_specific": {
+        "url": "https://pkg.go.dev/vuln/GO-2020-0040"
+      }
+    },
+    "modules": [
+      {
+        "path": "github.com/shiyanhui/dht",
+        "found_version": "v0.0.0-20201219151056-5a20f3199263",
+        "packages": [
+          {
+            "path": "github.com/shiyanhui/dht",
+            "callstacks": [
+              {
+                "symbol": "DHT.GetPeers",
+                "summary": "main.go:25:2: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.GetPeers",
+                "frames": [
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module3",
+                    "function": "main",
+                    "position": {
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 378,
+                      "Line": 25,
+                      "Column": 2
+                    }
+                  },
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module3",
+                    "function": "main$2",
+                    "position": {
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 457,
+                      "Line": 28,
+                      "Column": 21
+                    }
+                  },
+                  {
+                    "package": "github.com/shiyanhui/dht",
+                    "function": "GetPeers",
+                    "receiver": "*github.com/shiyanhui/dht.DHT",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "symbol": "DHT.Run",
+                "summary": "main.go:42:7: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.Run",
+                "frames": [
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module3",
+                    "function": "main",
+                    "position": {
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 679,
+                      "Line": 42,
+                      "Column": 7
+                    }
+                  },
+                  {
+                    "package": "github.com/shiyanhui/dht",
+                    "function": "Run",
+                    "receiver": "*github.com/shiyanhui/dht.DHT",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "symbol": "New",
+                "summary": "main.go:14:14: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.New",
+                "frames": [
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module3",
+                    "function": "main",
+                    "position": {
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 160,
+                      "Line": 14,
+                      "Column": 14
+                    }
+                  },
+                  {
+                    "package": "github.com/shiyanhui/dht",
+                    "function": "New",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
