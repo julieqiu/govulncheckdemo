@@ -1,7 +1,7 @@
 govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
 
-Using go1.20.2 and govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035 with
-vulnerability data from https://vuln.go.dev (last modified 2023-04-04 16:44:08 +0000 UTC).
+Using go1.20.3 and govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035 with
+vulnerability data from https://vuln.go.dev (last modified 2023-04-06 19:19:26 +0000 UTC).
 
 Scanning your code and 81 packages across 3 dependent modules for known vulnerabilities...
 Your code is affected by 2 vulnerabilities from 2 modules.

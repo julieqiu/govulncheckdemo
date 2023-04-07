@@ -2,8 +2,8 @@
   "config": {
     "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
     "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-04-05T18:09:19Z",
-    "go_version": "go1.20.2",
+    "last_modified": "2023-04-06T19:19:26Z",
+    "go_version": "go1.20.3",
     "analysis": "Source",
     "callstack_mode": "Compact"
   }

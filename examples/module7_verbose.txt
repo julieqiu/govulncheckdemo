@@ -3,7 +3,7 @@ govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulnch
 Using go1.20.3 and govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035 with
 vulnerability data from https://vuln.go.dev (last modified 2023-04-06 19:19:26 +0000 UTC).
 
-Scanning your code and 54 packages across 4 dependent modules for known vulnerabilities...
+Scanning your code and 46 packages across 1 dependent module for known vulnerabilities...
 Your code is affected by 1 vulnerability from 1 module.
 
 Vulnerability #1: GO-2021-0113
@@ -19,12 +19,19 @@ Vulnerability #1: GO-2021-0113
     Fixed in: golang.org/x/text@v0.3.7
 
     Call stacks in your code:
-      main.go:16:29: github.com/julieqiu/govulncheckdemo/module5.main calls golang.org/x/text/language.Parse
+      #1: for function Parse
+        github.com/julieqiu/govulncheckdemo/module5.main
+            main.go:15:5
+        github.com/julieqiu/govulncheckdemo/module5.Bar
+            main.go:23:5
+        github.com/julieqiu/govulncheckdemo/module5.foo
+            main.go:28:29
+        golang.org/x/text/language.Parse
 
 === Informational ===
 
-Found 2 vulnerabilities in packages that you import, but there are no call
-stacks leading to the use of these vulnerabilities. You may not need to
+Found 1 vulnerability in packages that you import, but there are no call
+stacks leading to the use of this vulnerability. You may not need to
 take any action. See https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
 for details.
 
@@ -35,10 +42,3 @@ Vulnerability #1: GO-2022-1059
   More info: https://pkg.go.dev/vuln/GO-2022-1059
   Found in: golang.org/x/text@v0.3.5
   Fixed in: golang.org/x/text@v0.3.8
-
-Vulnerability #2: GO-2021-0265
-  A maliciously crafted path can cause Get and other query
-  functions to consume excessive amounts of CPU and time.
-  More info: https://pkg.go.dev/vuln/GO-2021-0265
-  Found in: github.com/tidwall/gjson@v1.9.2
-  Fixed in: github.com/tidwall/gjson@v1.9.3
