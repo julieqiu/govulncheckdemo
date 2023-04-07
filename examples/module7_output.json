@@ -169,37 +169,73 @@
             "path": "golang.org/x/text/language",
             "callstacks": [
               {
-                "symbol": "Parse",
-                "summary": "main.go:28:29: github.com/julieqiu/govulncheckdemo/module5.foo calls golang.org/x/text/language.Parse",
+                "symbol": "MustParse",
+                "summary": "main.go:58:20: github.com/julieqiu/govulncheckdemo/module5.foobar calls golang.org/x/text/language.MustParse",
                 "frames": [
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "main",
                     "position": {
                       "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 178,
-                      "Line": 15,
-                      "Column": 5
+                      "Offset": 428,
+                      "Line": 25,
+                      "Column": 3
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
-                    "function": "Bar",
+                    "function": "D",
                     "position": {
                       "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 224,
-                      "Line": 23,
-                      "Column": 5
+                      "Offset": 557,
+                      "Line": 41,
+                      "Column": 8
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
-                    "function": "foo",
+                    "function": "foobar",
                     "position": {
                       "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 306,
-                      "Line": 28,
-                      "Column": 29
+                      "Offset": 880,
+                      "Line": 58,
+                      "Column": 20
+                    }
+                  },
+                  {
+                    "package": "golang.org/x/text/language",
+                    "function": "MustParse",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "symbol": "Parse",
+                "summary": "main.go:37:23: github.com/julieqiu/govulncheckdemo/module5.C calls golang.org/x/text/language.Parse",
+                "frames": [
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module5",
+                    "function": "main",
+                    "position": {
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "Offset": 327,
+                      "Line": 21,
+                      "Column": 3
+                    }
+                  },
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module5",
+                    "function": "C",
+                    "position": {
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "Offset": 531,
+                      "Line": 37,
+                      "Column": 23
                     }
                   },
                   {

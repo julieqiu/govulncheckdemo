@@ -19,13 +19,19 @@ Vulnerability #1: GO-2021-0113
     Fixed in: golang.org/x/text@v0.3.7
 
     Call stacks in your code:
-      #1: for function Parse
+      #1: for function MustParse
         github.com/julieqiu/govulncheckdemo/module5.main
-            main.go:15:5
-        github.com/julieqiu/govulncheckdemo/module5.Bar
-            main.go:23:5
-        github.com/julieqiu/govulncheckdemo/module5.foo
-            main.go:28:29
+            main.go:25:3
+        github.com/julieqiu/govulncheckdemo/module5.D
+            main.go:41:8
+        github.com/julieqiu/govulncheckdemo/module5.foobar
+            main.go:58:20
+        golang.org/x/text/language.MustParse
+      #2: for function Parse
+        github.com/julieqiu/govulncheckdemo/module5.main
+            main.go:21:3
+        github.com/julieqiu/govulncheckdemo/module5.C
+            main.go:37:23
         golang.org/x/text/language.Parse
 
 === Informational ===

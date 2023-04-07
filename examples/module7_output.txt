@@ -19,7 +19,8 @@ Vulnerability #1: GO-2021-0113
     Fixed in: golang.org/x/text@v0.3.7
 
     Call stacks in your code:
-      main.go:28:29: github.com/julieqiu/govulncheckdemo/module5.foo calls golang.org/x/text/language.Parse
+      main.go:37:23: github.com/julieqiu/govulncheckdemo/module5.C calls golang.org/x/text/language.Parse
+      main.go:58:20: github.com/julieqiu/govulncheckdemo/module5.foobar calls golang.org/x/text/language.MustParse
 
 === Informational ===
 
