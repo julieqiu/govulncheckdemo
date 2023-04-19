@@ -1,11 +1,9 @@
 {
   "config": {
-    "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
+    "version": "govulncheck@v0.0.0",
     "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-04-06T19:19:26Z",
-    "go_version": "go1.20.3",
-    "analysis": "Source",
-    "callstack_mode": "Compact"
+    "last_modified": "2023-04-18T21:32:26Z",
+    "go_version": "go1.20.3"
   }
 }
 {
@@ -263,21 +261,15 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module5/main.go",
-                      "Offset": 258,
-                      "Line": 16,
-                      "Column": 29
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module5/main.go",
+                      "offset": 258,
+                      "line": 16,
+                      "column": 29
                     }
                   },
                   {
                     "package": "golang.org/x/text/language",
-                    "function": "Parse",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "function": "Parse"
                   }
                 ]
               }

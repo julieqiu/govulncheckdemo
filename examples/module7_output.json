@@ -1,11 +1,9 @@
 {
   "config": {
-    "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
+    "version": "govulncheck@v0.0.0",
     "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-04-06T19:19:26Z",
-    "go_version": "go1.20.3",
-    "analysis": "Source",
-    "callstack_mode": "Compact"
+    "last_modified": "2023-04-18T21:32:26Z",
+    "go_version": "go1.20.3"
   }
 }
 {
@@ -176,41 +174,35 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 428,
-                      "Line": 25,
-                      "Column": 3
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 428,
+                      "line": 25,
+                      "column": 3
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "D",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 557,
-                      "Line": 41,
-                      "Column": 8
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 557,
+                      "line": 41,
+                      "column": 8
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "foobar",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 880,
-                      "Line": 58,
-                      "Column": 20
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 880,
+                      "line": 58,
+                      "column": 20
                     }
                   },
                   {
                     "package": "golang.org/x/text/language",
-                    "function": "MustParse",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "function": "MustParse"
                   }
                 ]
               },
@@ -222,31 +214,25 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 327,
-                      "Line": 21,
-                      "Column": 3
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 327,
+                      "line": 21,
+                      "column": 3
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "C",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
-                      "Offset": 531,
-                      "Line": 37,
-                      "Column": 23
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 531,
+                      "line": 37,
+                      "column": 23
                     }
                   },
                   {
                     "package": "golang.org/x/text/language",
-                    "function": "Parse",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "function": "Parse"
                   }
                 ]
               }

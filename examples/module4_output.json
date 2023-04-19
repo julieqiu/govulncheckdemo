@@ -1,11 +1,9 @@
 {
   "config": {
-    "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
+    "version": "govulncheck@v0.0.0",
     "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-04-06T19:19:26Z",
-    "go_version": "go1.20.3",
-    "analysis": "Source",
-    "callstack_mode": "Compact"
+    "last_modified": "2023-04-18T21:32:26Z",
+    "go_version": "go1.20.3"
   }
 }
 {
@@ -95,22 +93,16 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module4",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
-                      "Offset": 544,
-                      "Line": 26,
-                      "Column": 21
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
+                      "offset": 544,
+                      "line": 26,
+                      "column": 21
                     }
                   },
                   {
                     "package": "github.com/evanphx/json-patch",
                     "function": "Apply",
-                    "receiver": "github.com/evanphx/json-patch.Patch",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "receiver": "Patch"
                   }
                 ]
               }
@@ -215,22 +207,16 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module4",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
-                      "Offset": 330,
-                      "Line": 17,
-                      "Column": 29
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
+                      "offset": 330,
+                      "line": 17,
+                      "column": 29
                     }
                   },
                   {
                     "package": "golang.org/x/text/encoding/unicode",
                     "function": "Transform",
-                    "receiver": "*golang.org/x/text/encoding/unicode.bomOverride",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "receiver": "*bomOverride"
                   }
                 ]
               }

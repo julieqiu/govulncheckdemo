@@ -1,11 +1,9 @@
 {
   "config": {
-    "govulncheck_version": "govulncheck@v0.0.0-3dbf99b4ba5b-20230405165035",
+    "version": "govulncheck@v0.0.0",
     "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-04-06T19:19:26Z",
-    "go_version": "go1.20.3",
-    "analysis": "Source",
-    "callstack_mode": "Compact"
+    "last_modified": "2023-04-18T21:32:26Z",
+    "go_version": "go1.20.3"
   }
 }
 {
@@ -81,32 +79,26 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "Offset": 378,
-                      "Line": 25,
-                      "Column": 2
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "offset": 378,
+                      "line": 25,
+                      "column": 2
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main$2",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "Offset": 457,
-                      "Line": 28,
-                      "Column": 21
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "offset": 457,
+                      "line": 28,
+                      "column": 21
                     }
                   },
                   {
                     "package": "github.com/shiyanhui/dht",
                     "function": "GetPeers",
-                    "receiver": "*github.com/shiyanhui/dht.DHT",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "receiver": "*DHT"
                   }
                 ]
               },
@@ -118,22 +110,16 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "Offset": 679,
-                      "Line": 42,
-                      "Column": 7
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "offset": 679,
+                      "line": 42,
+                      "column": 7
                     }
                   },
                   {
                     "package": "github.com/shiyanhui/dht",
                     "function": "Run",
-                    "receiver": "*github.com/shiyanhui/dht.DHT",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "receiver": "*DHT"
                   }
                 ]
               },
@@ -145,21 +131,15 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main",
                     "position": {
-                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "Offset": 160,
-                      "Line": 14,
-                      "Column": 14
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "offset": 160,
+                      "line": 14,
+                      "column": 14
                     }
                   },
                   {
                     "package": "github.com/shiyanhui/dht",
-                    "function": "New",
-                    "position": {
-                      "Filename": "",
-                      "Offset": 0,
-                      "Line": 0,
-                      "Column": 0
-                    }
+                    "function": "New"
                   }
                 ]
               }

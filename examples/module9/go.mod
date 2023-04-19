@@ -3,8 +3,8 @@ module github.com/julieqiu/govulncheckdemo/module8
 go 1.18
 
 require (
-	github.com/buger/jsonparser v1.1.1
 	github.com/tidwall/gjson v1.9.2
+	gopkg.in/yaml.v2 v2.2.0
 )
 
 require (
