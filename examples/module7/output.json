@@ -8,7 +8,7 @@
 }
 {
   "progress": {
-    "message": "Scanning your code and 54 packages across 4 dependent modules for known vulnerabilities..."
+    "message": "Scanning your code and 46 packages across 1 dependent module for known vulnerabilities..."
   }
 }
 {
@@ -96,93 +96,6 @@
   "vulnerability": {
     "osv": {
       "schema_version": "1.3.1",
-      "id": "GO-2021-0265",
-      "modified": "2023-04-03T15:57:51Z",
-      "published": "2022-08-15T18:06:07Z",
-      "aliases": [
-        "CVE-2021-42248",
-        "CVE-2021-42836",
-        "GHSA-c9gm-7rfj-8w5h",
-        "GHSA-ppj4-34rq-v8j9"
-      ],
-      "details": "A maliciously crafted path can cause Get and other query functions to consume excessive amounts of CPU and time.",
-      "affected": [
-        {
-          "package": {
-            "name": "github.com/tidwall/gjson",
-            "ecosystem": "Go"
-          },
-          "ranges": [
-            {
-              "type": "SEMVER",
-              "events": [
-                {
-                  "introduced": "0"
-                },
-                {
-                  "fixed": "1.9.3"
-                }
-              ]
-            }
-          ],
-          "ecosystem_specific": {
-            "imports": [
-              {
-                "path": "github.com/tidwall/gjson",
-                "symbols": [
-                  "Get",
-                  "GetBytes",
-                  "GetMany",
-                  "GetManyBytes",
-                  "Result.Get",
-                  "parseObject",
-                  "queryMatches"
-                ]
-              }
-            ]
-          }
-        }
-      ],
-      "references": [
-        {
-          "type": "FIX",
-          "url": "https://github.com/tidwall/gjson/commit/77a57fda87dca6d0d7d4627d512a630f89a91c96"
-        },
-        {
-          "type": "WEB",
-          "url": "https://github.com/tidwall/gjson/issues/237"
-        },
-        {
-          "type": "WEB",
-          "url": "https://github.com/tidwall/gjson/issues/236"
-        },
-        {
-          "type": "WEB",
-          "url": "https://github.com/tidwall/gjson/commit/590010fdac311cc8990ef5c97448d4fec8f29944"
-        }
-      ],
-      "database_specific": {
-        "url": "https://pkg.go.dev/vuln/GO-2021-0265"
-      }
-    },
-    "modules": [
-      {
-        "path": "github.com/tidwall/gjson",
-        "found_version": "v1.9.2",
-        "fixed_version": "v1.9.3",
-        "packages": [
-          {
-            "path": "github.com/tidwall/gjson"
-          }
-        ]
-      }
-    ]
-  }
-}
-{
-  "vulnerability": {
-    "osv": {
-      "schema_version": "1.3.1",
       "id": "GO-2021-0113",
       "modified": "2023-04-03T15:57:51Z",
       "published": "2021-10-06T17:51:21Z",
@@ -254,17 +167,63 @@
             "path": "golang.org/x/text/language",
             "callstacks": [
               {
-                "symbol": "Parse",
-                "summary": "main.go:16:29: github.com/julieqiu/govulncheckdemo/module5.main calls golang.org/x/text/language.Parse",
                 "frames": [
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module5",
                     "function": "main",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module5/main.go",
-                      "offset": 258,
-                      "line": 16,
-                      "column": 29
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 428,
+                      "line": 25,
+                      "column": 3
+                    }
+                  },
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module5",
+                    "function": "D",
+                    "position": {
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 557,
+                      "line": 41,
+                      "column": 8
+                    }
+                  },
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module5",
+                    "function": "foobar",
+                    "position": {
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 880,
+                      "line": 58,
+                      "column": 20
+                    }
+                  },
+                  {
+                    "package": "golang.org/x/text/language",
+                    "function": "MustParse"
+                  }
+                ]
+              },
+              {
+                "frames": [
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module5",
+                    "function": "main",
+                    "position": {
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 327,
+                      "line": 21,
+                      "column": 3
+                    }
+                  },
+                  {
+                    "package": "github.com/julieqiu/govulncheckdemo/module5",
+                    "function": "C",
+                    "position": {
+                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module7/main.go",
+                      "offset": 531,
+                      "line": 37,
+                      "column": 23
                     }
                   },
                   {

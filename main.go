@@ -64,7 +64,7 @@ func runGovulncheck(dir string) error {
 		} else if err != nil {
 			return err
 		}
-		if err := writeFile(abs+"_"+mode.filename, out); err != nil {
+		if err := writeFile(abs+"/"+mode.filename, out); err != nil {
 			return err
 		}
 	}

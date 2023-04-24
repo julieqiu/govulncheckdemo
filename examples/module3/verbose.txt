@@ -18,13 +18,13 @@ Vulnerability #1: GO-2020-0040
     Fixed in: N/A
 
     Call stacks in your code:
-      #1: for function DHT.GetPeers
+      #1: for function *DHT.GetPeers
         github.com/julieqiu/govulncheckdemo/module3.main
             main.go:25:2
         github.com/julieqiu/govulncheckdemo/module3.main$2
             main.go:28:21
         github.com/shiyanhui/dht.DHT.GetPeers
-      #2: for function DHT.Run
+      #2: for function *DHT.Run
         github.com/julieqiu/govulncheckdemo/module3.main
             main.go:42:7
         github.com/shiyanhui/dht.DHT.Run

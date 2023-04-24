@@ -19,7 +19,7 @@ Vulnerability #1: GO-2022-0956
     Call stacks in your code:
       #1: for function Unmarshal
         github.com/julieqiu/govulncheckdemo/module8.main
-            main.go:45:24
+            main.go:46:24
         gopkg.in/yaml.v2.Unmarshal
 
 Vulnerability #2: GO-2021-0061
@@ -37,7 +37,7 @@ Vulnerability #2: GO-2021-0061
     Call stacks in your code:
       #1: for function Unmarshal
         github.com/julieqiu/govulncheckdemo/module8.main
-            main.go:45:24
+            main.go:46:24
         gopkg.in/yaml.v2.Unmarshal
 
 Vulnerability #3: GO-2020-0036
@@ -54,7 +54,7 @@ Vulnerability #3: GO-2020-0036
     Call stacks in your code:
       #1: for function Unmarshal
         github.com/julieqiu/govulncheckdemo/module8.main
-            main.go:45:24
+            main.go:46:24
         gopkg.in/yaml.v2.Unmarshal
 
 === Informational ===

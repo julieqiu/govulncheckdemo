@@ -37,7 +37,7 @@ Vulnerability #2: GO-2020-0015
     Fixed in: golang.org/x/text@v0.3.3
 
     Call stacks in your code:
-      #1: for function bomOverride.Transform
+      #1: for function *bomOverride.Transform
         github.com/julieqiu/govulncheckdemo/module4.main
             main.go:17:29
         golang.org/x/text/encoding/unicode.bomOverride.Transform

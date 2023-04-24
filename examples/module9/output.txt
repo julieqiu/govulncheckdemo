@@ -17,7 +17,7 @@ Vulnerability #1: GO-2022-0956
     Fixed in: gopkg.in/yaml.v2@v2.2.4
 
     Call stacks in your code:
-      main.go:45:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
+      main.go:46:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
 
 Vulnerability #2: GO-2021-0061
   Due to unbounded alias chasing, a maliciously crafted YAML file
@@ -32,7 +32,7 @@ Vulnerability #2: GO-2021-0061
     Fixed in: gopkg.in/yaml.v2@v2.2.3
 
     Call stacks in your code:
-      main.go:45:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
+      main.go:46:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
 
 Vulnerability #3: GO-2020-0036
   Due to unbounded aliasing, a crafted YAML file can cause
@@ -46,7 +46,7 @@ Vulnerability #3: GO-2020-0036
     Fixed in: gopkg.in/yaml.v2@v2.2.8
 
     Call stacks in your code:
-      main.go:45:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
+      main.go:46:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
 
 === Informational ===
 

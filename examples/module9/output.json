@@ -83,16 +83,14 @@
             "path": "gopkg.in/yaml.v2",
             "callstacks": [
               {
-                "symbol": "Unmarshal",
-                "summary": "main.go:45:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal",
                 "frames": [
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module8",
                     "function": "main",
                     "position": {
                       "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module9/main.go",
-                      "offset": 835,
-                      "line": 45,
+                      "offset": 840,
+                      "line": 46,
                       "column": 24
                     }
                   },
@@ -271,16 +269,14 @@
             "path": "gopkg.in/yaml.v2",
             "callstacks": [
               {
-                "symbol": "Unmarshal",
-                "summary": "main.go:45:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal",
                 "frames": [
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module8",
                     "function": "main",
                     "position": {
                       "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module9/main.go",
-                      "offset": 835,
-                      "line": 45,
+                      "offset": 840,
+                      "line": 46,
                       "column": 24
                     }
                   },
@@ -376,16 +372,14 @@
             "path": "gopkg.in/yaml.v2",
             "callstacks": [
               {
-                "symbol": "Unmarshal",
-                "summary": "main.go:45:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal",
                 "frames": [
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module8",
                     "function": "main",
                     "position": {
                       "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module9/main.go",
-                      "offset": 835,
-                      "line": 45,
+                      "offset": 840,
+                      "line": 46,
                       "column": 24
                     }
                   },

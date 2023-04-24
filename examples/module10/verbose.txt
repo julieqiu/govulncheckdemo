@@ -68,7 +68,7 @@ Vulnerability #1: GO-2020-0003
         github.com/revel/revel.init#10
             /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/template_adapter_go.go:14:21
         github.com/revel/revel.AddInitEventHandler
-      #5: for function CompressResponseWriter.Write
+      #5: for function *CompressResponseWriter.Write
         github.com/julieqiu/govulncheck/module10.init
         github.com/revel/revel.init
         html/template.init
@@ -88,7 +88,7 @@ Vulnerability #1: GO-2020-0003
         io.WriteString
             /Users/julieqiu/go/current/src/io/io.go:315:16
         github.com/revel/revel.CompressResponseWriter.Write
-      #6: for function Error.Error
+      #6: for function *Error.Error
         github.com/julieqiu/govulncheck/module10.init
         github.com/revel/revel.init
         html/template.init
