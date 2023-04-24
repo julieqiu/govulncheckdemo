@@ -79,26 +79,32 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 378,
-                      "line": 25,
-                      "column": 2
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 378,
+                      "Line": 25,
+                      "Column": 2
                     }
                   },
                   {
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main$2",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 457,
-                      "line": 28,
-                      "column": 21
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 457,
+                      "Line": 28,
+                      "Column": 21
                     }
                   },
                   {
                     "package": "github.com/shiyanhui/dht",
                     "function": "GetPeers",
-                    "receiver": "*DHT"
+                    "receiver": "*github.com/shiyanhui/dht.DHT",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
                   }
                 ]
               },
@@ -110,16 +116,22 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 679,
-                      "line": 42,
-                      "column": 7
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 679,
+                      "Line": 42,
+                      "Column": 7
                     }
                   },
                   {
                     "package": "github.com/shiyanhui/dht",
                     "function": "Run",
-                    "receiver": "*DHT"
+                    "receiver": "*github.com/shiyanhui/dht.DHT",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
                   }
                 ]
               },
@@ -131,15 +143,21 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module3",
                     "function": "main",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 160,
-                      "line": 14,
-                      "column": 14
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+                      "Offset": 160,
+                      "Line": 14,
+                      "Column": 14
                     }
                   },
                   {
                     "package": "github.com/shiyanhui/dht",
-                    "function": "New"
+                    "function": "New",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
                   }
                 ]
               }

@@ -1,0 +1,24 @@
+govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+
+Using go1.20.3 and govulncheck@v0.0.0 with
+vulnerability data from https://vuln.go.dev (last modified 2023-04-18 21:32:26 +0000 UTC).
+
+Scanning your code and 174 packages across 14 dependent modules for known vulnerabilities...
+Your code is affected by 1 vulnerability from 1 module.
+
+Vulnerability #1: GO-2020-0003
+  An attacker can cause an application that accepts slice
+  parameters
+  (https://revel.github.io/manual/parameters.html#slices) to
+  allocate large amounts of memory and crash through manipulating
+  the request query sent to the application.
+
+  More info: https://pkg.go.dev/vuln/GO-2020-0003
+
+  Module: github.com/revel/revel
+    Found in: github.com/revel/revel@v0.21.0
+    Fixed in: github.com/revel/revel@v1.0.0
+
+    Call stacks in your code:
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init
+      main.go:6:18: github.com/julieqiu/govulncheck/module10.main calls github.com/revel/revel.InitServer

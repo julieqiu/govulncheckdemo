@@ -93,16 +93,22 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module4",
                     "function": "main",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
-                      "offset": 544,
-                      "line": 26,
-                      "column": 21
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
+                      "Offset": 544,
+                      "Line": 26,
+                      "Column": 21
                     }
                   },
                   {
                     "package": "github.com/evanphx/json-patch",
                     "function": "Apply",
-                    "receiver": "Patch"
+                    "receiver": "github.com/evanphx/json-patch.Patch",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
                   }
                 ]
               }
@@ -207,16 +213,22 @@
                     "package": "github.com/julieqiu/govulncheckdemo/module4",
                     "function": "main",
                     "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
-                      "offset": 330,
-                      "line": 17,
-                      "column": 29
+                      "Filename": "/Users/julieqiu/code/govulncheckdemo/examples/module4/main.go",
+                      "Offset": 330,
+                      "Line": 17,
+                      "Column": 29
                     }
                   },
                   {
                     "package": "golang.org/x/text/encoding/unicode",
                     "function": "Transform",
-                    "receiver": "*bomOverride"
+                    "receiver": "*golang.org/x/text/encoding/unicode.bomOverride",
+                    "position": {
+                      "Filename": "",
+                      "Offset": 0,
+                      "Line": 0,
+                      "Column": 0
+                    }
                   }
                 ]
               }
