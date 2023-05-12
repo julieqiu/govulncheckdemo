@@ -2,13 +2,13 @@
   "config": {
     "version": "govulncheck@v0.0.0",
     "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-04-18T21:32:26Z",
-    "go_version": "go1.20.3"
+    "last_modified": "2023-05-11T18:59:56Z",
+    "go_version": "go1.20.4"
   }
 }
 {
   "progress": {
-    "message": "Scanning your code and 174 packages across 14 dependent modules for known vulnerabilities..."
+    "message": "Scanning your code and 173 packages across 14 dependent modules for known vulnerabilities..."
   }
 }
 {
@@ -107,7 +107,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -117,7 +117,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -127,7 +127,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -137,7 +137,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1752,
                       "line": 43,
                       "column": 15
@@ -174,7 +174,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -184,7 +184,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -194,7 +194,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -204,7 +204,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -214,7 +214,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 2926,
                       "line": 108,
                       "column": 25
@@ -251,7 +251,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -261,7 +261,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -271,7 +271,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -281,7 +281,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -291,7 +291,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 1947,
                       "line": 73,
                       "column": 17
@@ -301,7 +301,7 @@
                     "package": "sort",
                     "function": "insertionSort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 423,
                       "line": 13,
                       "column": 13
@@ -374,7 +374,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -384,7 +384,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 890,
                       "line": 25,
                       "column": 12
@@ -395,7 +395,7 @@
                     "function": "doPrintf",
                     "receiver": "*pp",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/print.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
                       "offset": 28963,
                       "line": 1077,
                       "column": 16
@@ -406,7 +406,7 @@
                     "function": "printArg",
                     "receiver": "*pp",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/print.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
                       "offset": 20093,
                       "line": 749,
                       "column": 22
@@ -417,7 +417,7 @@
                     "function": "handleMethods",
                     "receiver": "*pp",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/print.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
                       "offset": 17357,
                       "line": 640,
                       "column": 19
@@ -449,7 +449,7 @@
                     "package": "io",
                     "function": "WriteString",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/io/io.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/io/io.go",
                       "offset": 11303,
                       "line": 315,
                       "column": 16
@@ -486,7 +486,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -496,7 +496,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 890,
                       "line": 25,
                       "column": 12
@@ -507,7 +507,7 @@
                     "function": "doPrintf",
                     "receiver": "*pp",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/print.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
                       "offset": 28963,
                       "line": 1077,
                       "column": 16
@@ -518,7 +518,7 @@
                     "function": "printArg",
                     "receiver": "*pp",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/print.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
                       "offset": 20093,
                       "line": 749,
                       "column": 22
@@ -529,7 +529,7 @@
                     "function": "handleMethods",
                     "receiver": "*pp",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/print.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
                       "offset": 18244,
                       "line": 667,
                       "column": 24
@@ -656,7 +656,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -666,7 +666,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -676,7 +676,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -686,7 +686,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1752,
                       "line": 43,
                       "column": 15
@@ -723,7 +723,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -733,7 +733,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -743,7 +743,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -753,7 +753,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -763,7 +763,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 2926,
                       "line": 108,
                       "column": 25
@@ -800,7 +800,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -810,7 +810,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -820,7 +820,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -830,7 +830,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -840,7 +840,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 1947,
                       "line": 73,
                       "column": 17
@@ -850,7 +850,7 @@
                     "package": "sort",
                     "function": "insertionSort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 423,
                       "line": 13,
                       "column": 13
@@ -887,7 +887,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -897,7 +897,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -907,7 +907,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -917,7 +917,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1752,
                       "line": 43,
                       "column": 15
@@ -954,7 +954,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -964,7 +964,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -974,7 +974,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -984,7 +984,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -994,7 +994,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 2926,
                       "line": 108,
                       "column": 25
@@ -1031,7 +1031,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1041,7 +1041,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1051,7 +1051,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1061,7 +1061,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -1071,7 +1071,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 1947,
                       "line": 73,
                       "column": 17
@@ -1081,7 +1081,7 @@
                     "package": "sort",
                     "function": "insertionSort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 423,
                       "line": 13,
                       "column": 13
@@ -1181,7 +1181,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1191,7 +1191,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1201,7 +1201,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1211,7 +1211,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1752,
                       "line": 43,
                       "column": 15
@@ -1248,7 +1248,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1258,7 +1258,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1268,7 +1268,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1278,7 +1278,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -1288,7 +1288,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 2926,
                       "line": 108,
                       "column": 25
@@ -1325,7 +1325,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1335,7 +1335,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1345,7 +1345,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1355,7 +1355,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -1365,7 +1365,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 1947,
                       "line": 73,
                       "column": 17
@@ -1375,7 +1375,7 @@
                     "package": "sort",
                     "function": "insertionSort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 423,
                       "line": 13,
                       "column": 13
@@ -1412,7 +1412,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1422,7 +1422,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1432,7 +1432,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1442,7 +1442,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1752,
                       "line": 43,
                       "column": 15
@@ -1479,7 +1479,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1489,7 +1489,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1499,7 +1499,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1509,7 +1509,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -1519,7 +1519,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 2926,
                       "line": 108,
                       "column": 25
@@ -1556,7 +1556,7 @@
                     "package": "html/template",
                     "function": "init",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/html/template/template.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
                       "offset": 926,
                       "line": 34,
                       "column": 26
@@ -1566,7 +1566,7 @@
                     "package": "fmt",
                     "function": "Errorf",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/fmt/errors.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
                       "offset": 1124,
                       "line": 37,
                       "column": 13
@@ -1576,7 +1576,7 @@
                     "package": "sort",
                     "function": "Ints",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 5052,
                       "line": 157,
                       "column": 26
@@ -1586,7 +1586,7 @@
                     "package": "sort",
                     "function": "Sort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/sort.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
                       "offset": 1816,
                       "line": 48,
                       "column": 9
@@ -1596,7 +1596,7 @@
                     "package": "sort",
                     "function": "pdqsort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 1947,
                       "line": 73,
                       "column": 17
@@ -1606,7 +1606,7 @@
                     "package": "sort",
                     "function": "insertionSort",
                     "position": {
-                      "filename": "/Users/julieqiu/go/current/src/sort/zsortinterface.go",
+                      "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
                       "offset": 423,
                       "line": 13,
                       "column": 13
