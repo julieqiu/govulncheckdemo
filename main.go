@@ -49,7 +49,7 @@ func runGovulncheck(dir string) error {
 		args     []string
 	}{
 		{"output.txt", []string{"./..."}},
-		{"verbose.txt", []string{"-v", "./..."}},
+		{"verbose.txt", []string{"-show=traces", "./..."}},
 		{"output.json", []string{"-json", "./..."}},
 	} {
 		cmd := exec.Command("govulncheck", mode.args...)
