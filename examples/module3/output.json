@@ -1,8 +1,10 @@
 {
   "config": {
-    "version": "govulncheck@v0.0.0",
-    "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-05-11T18:59:56Z",
+    "protocol_version": "v0.1.0",
+    "scanner_name": "govulncheck",
+    "scanner_version": "v0.0.0",
+    "db": "https://vuln.go.dev",
+    "db_last_modified": "2023-05-11T18:59:56Z",
     "go_version": "go1.20.4"
   }
 }
@@ -12,134 +14,138 @@
   }
 }
 {
-  "vulnerability": {
-    "osv": {
-      "schema_version": "1.3.1",
-      "id": "GO-2020-0040",
-      "modified": "2023-04-03T15:57:51Z",
-      "published": "2021-04-14T20:04:52Z",
-      "aliases": [
-        "CVE-2020-36562",
-        "GHSA-p6fg-723f-hgpw"
-      ],
-      "details": "Due to unchecked type assertions, maliciously crafted messages can cause panics, which may be used as a denial of service vector.",
-      "affected": [
-        {
-          "package": {
-            "name": "github.com/shiyanhui/dht",
-            "ecosystem": "Go"
-          },
-          "ranges": [
-            {
-              "type": "SEMVER",
-              "events": [
-                {
-                  "introduced": "0"
-                }
-              ]
-            }
-          ],
-          "ecosystem_specific": {
-            "imports": [
-              {
-                "path": "github.com/shiyanhui/dht"
-              }
-            ]
-          }
-        }
-      ],
-      "references": [
-        {
-          "type": "WEB",
-          "url": "https://github.com/shiyanhui/dht/issues/57"
-        }
-      ],
-      "credits": [
-        {
-          "name": "@hMihaiDavid"
-        }
-      ],
-      "database_specific": {
-        "url": "https://pkg.go.dev/vuln/GO-2020-0040"
-      }
-    },
-    "modules": [
+  "osv": {
+    "schema_version": "1.3.1",
+    "id": "GO-2020-0040",
+    "modified": "2023-04-03T15:57:51Z",
+    "published": "2021-04-14T20:04:52Z",
+    "aliases": [
+      "CVE-2020-36562",
+      "GHSA-p6fg-723f-hgpw"
+    ],
+    "details": "Due to unchecked type assertions, maliciously crafted messages can cause panics, which may be used as a denial of service vector.",
+    "affected": [
       {
-        "path": "github.com/shiyanhui/dht",
-        "found_version": "v0.0.0-20201219151056-5a20f3199263",
-        "packages": [
+        "package": {
+          "name": "github.com/shiyanhui/dht",
+          "ecosystem": "Go"
+        },
+        "ranges": [
           {
-            "path": "github.com/shiyanhui/dht",
-            "callstacks": [
+            "type": "SEMVER",
+            "events": [
               {
-                "frames": [
-                  {
-                    "package": "github.com/julieqiu/govulncheckdemo/module3",
-                    "function": "main",
-                    "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 378,
-                      "line": 25,
-                      "column": 2
-                    }
-                  },
-                  {
-                    "package": "github.com/julieqiu/govulncheckdemo/module3",
-                    "function": "main$2",
-                    "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 457,
-                      "line": 28,
-                      "column": 21
-                    }
-                  },
-                  {
-                    "package": "github.com/shiyanhui/dht",
-                    "function": "GetPeers",
-                    "receiver": "*DHT"
-                  }
-                ]
-              },
-              {
-                "frames": [
-                  {
-                    "package": "github.com/julieqiu/govulncheckdemo/module3",
-                    "function": "main",
-                    "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 679,
-                      "line": 42,
-                      "column": 7
-                    }
-                  },
-                  {
-                    "package": "github.com/shiyanhui/dht",
-                    "function": "Run",
-                    "receiver": "*DHT"
-                  }
-                ]
-              },
-              {
-                "frames": [
-                  {
-                    "package": "github.com/julieqiu/govulncheckdemo/module3",
-                    "function": "main",
-                    "position": {
-                      "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-                      "offset": 160,
-                      "line": 14,
-                      "column": 14
-                    }
-                  },
-                  {
-                    "package": "github.com/shiyanhui/dht",
-                    "function": "New"
-                  }
-                ]
+                "introduced": "0"
               }
             ]
           }
-        ]
+        ],
+        "ecosystem_specific": {
+          "imports": [
+            {
+              "path": "github.com/shiyanhui/dht"
+            }
+          ]
+        }
+      }
+    ],
+    "references": [
+      {
+        "type": "WEB",
+        "url": "https://github.com/shiyanhui/dht/issues/57"
+      }
+    ],
+    "credits": [
+      {
+        "name": "@hMihaiDavid"
+      }
+    ],
+    "database_specific": {
+      "url": "https://pkg.go.dev/vuln/GO-2020-0040"
+    }
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0040",
+    "trace": [
+      {
+        "module": "github.com/shiyanhui/dht",
+        "version": "v0.0.0-20201219151056-5a20f3199263",
+        "package": "github.com/shiyanhui/dht",
+        "function": "GetPeers",
+        "receiver": "*DHT"
+      },
+      {
+        "module": "github.com/julieqiu/govulncheckdemo/module3",
+        "package": "github.com/julieqiu/govulncheckdemo/module3",
+        "function": "main$2",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+          "offset": 457,
+          "line": 28,
+          "column": 21
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheckdemo/module3",
+        "package": "github.com/julieqiu/govulncheckdemo/module3",
+        "function": "main",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+          "offset": 378,
+          "line": 25,
+          "column": 2
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0040",
+    "trace": [
+      {
+        "module": "github.com/shiyanhui/dht",
+        "version": "v0.0.0-20201219151056-5a20f3199263",
+        "package": "github.com/shiyanhui/dht",
+        "function": "New"
+      },
+      {
+        "module": "github.com/julieqiu/govulncheckdemo/module3",
+        "package": "github.com/julieqiu/govulncheckdemo/module3",
+        "function": "main",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+          "offset": 160,
+          "line": 14,
+          "column": 14
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0040",
+    "trace": [
+      {
+        "module": "github.com/shiyanhui/dht",
+        "version": "v0.0.0-20201219151056-5a20f3199263",
+        "package": "github.com/shiyanhui/dht",
+        "function": "Run",
+        "receiver": "*DHT"
+      },
+      {
+        "module": "github.com/julieqiu/govulncheckdemo/module3",
+        "package": "github.com/julieqiu/govulncheckdemo/module3",
+        "function": "main",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
+          "offset": 679,
+          "line": 42,
+          "column": 7
+        }
       }
     ]
   }

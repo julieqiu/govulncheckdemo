@@ -1,8 +1,10 @@
 {
   "config": {
-    "version": "govulncheck@v0.0.0",
-    "data_source": "https://vuln.go.dev",
-    "last_modified": "2023-05-11T18:59:56Z",
+    "protocol_version": "v0.1.0",
+    "scanner_name": "govulncheck",
+    "scanner_version": "v0.0.0",
+    "db": "https://vuln.go.dev",
+    "db_last_modified": "2023-05-11T18:59:56Z",
     "go_version": "go1.20.4"
   }
 }

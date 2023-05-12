@@ -14,9 +14,10 @@ take any action. See https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
 for details.
 
 Vulnerability #1: GO-2022-1059
-  An attacker may cause a denial of service by crafting an
-  Accept-Language header which ParseAcceptLanguage will take
-  significant time to parse.
+    An attacker may cause a denial of service by crafting an
+    Accept-Language header which ParseAcceptLanguage will take
+    significant time to parse.
   More info: https://pkg.go.dev/vuln/GO-2022-1059
-  Found in: golang.org/x/text@v0.3.7
-  Fixed in: golang.org/x/text@v0.3.8
+  Module: golang.org/x/text
+    Found in: golang.org/x/text@v0.3.7
+    Fixed in: golang.org/x/text@v0.3.8

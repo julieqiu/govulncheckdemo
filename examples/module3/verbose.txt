@@ -7,28 +7,25 @@ Scanning your code and 127 packages across 1 dependent module for known vulnerab
 Your code is affected by 1 vulnerability from 1 module.
 
 Vulnerability #1: GO-2020-0040
-  Due to unchecked type assertions, maliciously crafted messages
-  can cause panics, which may be used as a denial of service
-  vector.
-
+    Due to unchecked type assertions, maliciously crafted messages
+    can cause panics, which may be used as a denial of service
+    vector.
   More info: https://pkg.go.dev/vuln/GO-2020-0040
-
   Module: github.com/shiyanhui/dht
     Found in: github.com/shiyanhui/dht@v0.0.0-20201219151056-5a20f3199263
     Fixed in: N/A
-
     Call stacks in your code:
       #1: for function *DHT.GetPeers
         github.com/julieqiu/govulncheckdemo/module3.main
             main.go:25:2
-        github.com/julieqiu/govulncheckdemo/module3.main$2
+        github.com/julieqiu/govulncheckdemo/module3.main
             main.go:28:21
         github.com/shiyanhui/dht.DHT.GetPeers
+      #2: for function New
+        github.com/julieqiu/govulncheckdemo/module3.main
+            main.go:14:14
+        github.com/shiyanhui/dht.New
       #2: for function *DHT.Run
         github.com/julieqiu/govulncheckdemo/module3.main
             main.go:42:7
         github.com/shiyanhui/dht.DHT.Run
-      #3: for function New
-        github.com/julieqiu/govulncheckdemo/module3.main
-            main.go:14:14
-        github.com/shiyanhui/dht.New

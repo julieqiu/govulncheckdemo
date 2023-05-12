@@ -7,44 +7,37 @@ Scanning your code and 56 packages across 4 dependent modules for known vulnerab
 Your code is affected by 3 vulnerabilities from 1 module.
 
 Vulnerability #1: GO-2022-0956
-  Parsing malicious or large YAML documents can consume excessive
-  amounts of CPU or memory.
-
+    Parsing malicious or large YAML documents can consume excessive
+    amounts of CPU or memory.
   More info: https://pkg.go.dev/vuln/GO-2022-0956
-
   Module: gopkg.in/yaml.v2
     Found in: gopkg.in/yaml.v2@v2.2.0
     Fixed in: gopkg.in/yaml.v2@v2.2.4
-
     Call stacks in your code:
       main.go:46:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
 
+
 Vulnerability #2: GO-2021-0061
-  Due to unbounded alias chasing, a maliciously crafted YAML file
-  can cause the system to consume significant system resources. If
-  parsing user input, this may be used as a denial of service
-  vector.
-
+    Due to unbounded alias chasing, a maliciously crafted YAML file
+    can cause the system to consume significant system resources. If
+    parsing user input, this may be used as a denial of service
+    vector.
   More info: https://pkg.go.dev/vuln/GO-2021-0061
-
   Module: gopkg.in/yaml.v2
     Found in: gopkg.in/yaml.v2@v2.2.0
     Fixed in: gopkg.in/yaml.v2@v2.2.3
-
     Call stacks in your code:
       main.go:46:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
 
+
 Vulnerability #3: GO-2020-0036
-  Due to unbounded aliasing, a crafted YAML file can cause
-  consumption of significant system resources. If parsing user
-  supplied input, this may be used as a denial of service vector.
-
+    Due to unbounded aliasing, a crafted YAML file can cause
+    consumption of significant system resources. If parsing user
+    supplied input, this may be used as a denial of service vector.
   More info: https://pkg.go.dev/vuln/GO-2020-0036
-
   Module: gopkg.in/yaml.v2
     Found in: gopkg.in/yaml.v2@v2.2.0
     Fixed in: gopkg.in/yaml.v2@v2.2.8
-
     Call stacks in your code:
       main.go:46:24: github.com/julieqiu/govulncheckdemo/module8.main calls gopkg.in/yaml.v2.Unmarshal
 
@@ -56,8 +49,9 @@ take any action. See https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck
 for details.
 
 Vulnerability #1: GO-2021-0265
-  A maliciously crafted path can cause Get and other query
-  functions to consume excessive amounts of CPU and time.
+    A maliciously crafted path can cause Get and other query
+    functions to consume excessive amounts of CPU and time.
   More info: https://pkg.go.dev/vuln/GO-2021-0265
-  Found in: github.com/tidwall/gjson@v1.9.2
-  Fixed in: github.com/tidwall/gjson@v1.9.3
+  Module: github.com/tidwall/gjson
+    Found in: github.com/tidwall/gjson@v1.9.2
+    Fixed in: github.com/tidwall/gjson@v1.9.3
