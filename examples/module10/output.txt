@@ -3,7 +3,7 @@ govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulnch
 Using go1.20.4 and govulncheck@v0.0.0 with
 vulnerability data from https://vuln.go.dev (last modified 2023-05-11 18:59:56 +0000 UTC).
 
-Scanning your code and 173 packages across 14 dependent modules for known vulnerabilities...
+Scanning your code and 174 packages across 14 dependent modules for known vulnerabilities...
 Your code is affected by 1 vulnerability from 1 module.
 
 Vulnerability #1: GO-2020-0003
@@ -17,5 +17,26 @@ Vulnerability #1: GO-2020-0003
     Found in: github.com/revel/revel@v0.21.0
     Fixed in: github.com/revel/revel@v1.0.0
     Call stacks in your code:
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AddInitEventHandler
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.Error.Error
       main.go:6:18: github.com/julieqiu/govulncheck/module10.main calls github.com/revel/revel.InitServer
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RevelHooks.Len
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.reverseInterceptorItemList.Len
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.interceptorItemList.Len
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.ServerMuxList.Len
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AcceptLanguages.Len
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RevelHooks.Less
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AcceptLanguages.Less
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.ServerMuxList.Less
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.reverseInterceptorItemList.Less
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.interceptorItemList.Less
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.OnAppStart
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RegisterSessionEngine
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RevelHooks.Swap
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.reverseInterceptorItemList.Swap
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.ServerMuxList.Swap
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AcceptLanguages.Swap
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.interceptorItemList.Swap
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which calls github.com/revel/revel.ValueBinder
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.CompressResponseWriter.Write
+      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.initLoggers

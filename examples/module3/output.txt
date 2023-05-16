@@ -3,7 +3,7 @@ govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulnch
 Using go1.20.4 and govulncheck@v0.0.0 with
 vulnerability data from https://vuln.go.dev (last modified 2023-05-11 18:59:56 +0000 UTC).
 
-Scanning your code and 127 packages across 1 dependent module for known vulnerabilities...
+Scanning your code and 128 packages across 1 dependent module for known vulnerabilities...
 Your code is affected by 1 vulnerability from 1 module.
 
 Vulnerability #1: GO-2020-0040
@@ -15,6 +15,6 @@ Vulnerability #1: GO-2020-0040
     Found in: github.com/shiyanhui/dht@v0.0.0-20201219151056-5a20f3199263
     Fixed in: N/A
     Call stacks in your code:
-      main.go:25:2: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/julieqiu/govulncheckdemo/module3.main, which eventually calls github.com/shiyanhui/dht.DHT.GetPeers
+      main.go:28:21: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.GetPeers
       main.go:14:14: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.New
       main.go:42:7: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.Run
