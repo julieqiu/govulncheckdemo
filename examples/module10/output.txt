@@ -1,42 +1,38 @@
-govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+Using go1.20.6 and govulncheck@v0.2.1-0.20230713045519-f69de671333b with vulnerability data from https://vuln.go.dev (last modified 2023-07-11 19:19:08 +0000 UTC).
 
-Using go1.20.4 and govulncheck@v0.0.0 with
-vulnerability data from https://vuln.go.dev (last modified 2023-05-11 18:59:56 +0000 UTC).
-
-Scanning your code and 174 packages across 14 dependent modules for known vulnerabilities...
-Your code is affected by 1 vulnerability from 1 module.
+Scanning your code and 173 packages across 14 dependent modules for known vulnerabilities...
 
 Vulnerability #1: GO-2020-0003
-    An attacker can cause an application that accepts slice
-    parameters
-    (https://revel.github.io/manual/parameters.html#slices) to
-    allocate large amounts of memory and crash through manipulating
-    the request query sent to the application.
+    Resource exhaustion in github.com/revel/revel
   More info: https://pkg.go.dev/vuln/GO-2020-0003
   Module: github.com/revel/revel
     Found in: github.com/revel/revel@v0.21.0
     Fixed in: github.com/revel/revel@v1.0.0
-    Call stacks in your code:
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AddInitEventHandler
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.Error.Error
-      main.go:6:18: github.com/julieqiu/govulncheck/module10.main calls github.com/revel/revel.InitServer
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RevelHooks.Len
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.reverseInterceptorItemList.Len
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.interceptorItemList.Len
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.ServerMuxList.Len
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AcceptLanguages.Len
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RevelHooks.Less
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AcceptLanguages.Less
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.ServerMuxList.Less
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.reverseInterceptorItemList.Less
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.interceptorItemList.Less
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.OnAppStart
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RegisterSessionEngine
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.RevelHooks.Swap
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.reverseInterceptorItemList.Swap
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.ServerMuxList.Swap
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.AcceptLanguages.Swap
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.interceptorItemList.Swap
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which calls github.com/revel/revel.ValueBinder
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.CompressResponseWriter.Write
-      github.com/julieqiu/govulncheck/module10.init calls github.com/revel/revel.init, which eventually calls github.com/revel/revel.initLoggers
+    Example traces found:
+      #1: main.go:3:8: module10.init calls revel.init, which eventually calls revel.AcceptLanguages.Len
+      #2: main.go:3:8: module10.init calls revel.init, which eventually calls revel.AcceptLanguages.Less
+      #3: main.go:3:8: module10.init calls revel.init, which eventually calls revel.AcceptLanguages.Swap
+      #4: main.go:3:8: module10.init calls revel.init, which eventually calls revel.AddInitEventHandler
+      #5: main.go:3:8: module10.init calls revel.init, which eventually calls revel.CompressResponseWriter.Write
+      #6: main.go:3:8: module10.init calls revel.init, which eventually calls revel.Error.Error
+      #7: main.go:6:18: module10.main calls revel.InitServer
+      #8: main.go:3:8: module10.init calls revel.init, which eventually calls revel.OnAppStart
+      #9: main.go:3:8: module10.init calls revel.init, which eventually calls revel.RegisterSessionEngine
+      #10: main.go:3:8: module10.init calls revel.init, which eventually calls revel.RevelHooks.Len
+      #11: main.go:3:8: module10.init calls revel.init, which eventually calls revel.RevelHooks.Less
+      #12: main.go:3:8: module10.init calls revel.init, which eventually calls revel.RevelHooks.Swap
+      #13: main.go:3:8: module10.init calls revel.init, which eventually calls revel.ServerMuxList.Len
+      #14: main.go:3:8: module10.init calls revel.init, which eventually calls revel.ServerMuxList.Less
+      #15: main.go:3:8: module10.init calls revel.init, which eventually calls revel.ServerMuxList.Swap
+      #16: main.go:3:8: module10.init calls revel.init, which calls revel.ValueBinder
+      #17: main.go:3:8: module10.init calls revel.init, which eventually calls revel.initLoggers
+      #18: main.go:3:8: module10.init calls revel.init, which eventually calls revel.interceptorItemList.Len
+      #19: main.go:3:8: module10.init calls revel.init, which eventually calls revel.interceptorItemList.Less
+      #20: main.go:3:8: module10.init calls revel.init, which eventually calls revel.interceptorItemList.Swap
+      #21: main.go:3:8: module10.init calls revel.init, which eventually calls revel.reverseInterceptorItemList.Len
+      #22: main.go:3:8: module10.init calls revel.init, which eventually calls revel.reverseInterceptorItemList.Less
+      #23: main.go:3:8: module10.init calls revel.init, which eventually calls revel.reverseInterceptorItemList.Swap
+
+Your code is affected by 1 vulnerability from 1 module.
+
+Share feedback at https://go.dev/s/govulncheck-feedback.

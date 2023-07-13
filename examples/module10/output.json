@@ -1,28 +1,30 @@
 {
   "config": {
-    "protocol_version": "v0.1.0",
+    "protocol_version": "v1.0.0",
     "scanner_name": "govulncheck",
-    "scanner_version": "v0.0.0",
+    "scanner_version": "v0.2.1-0.20230713045519-f69de671333b",
     "db": "https://vuln.go.dev",
-    "db_last_modified": "2023-05-11T18:59:56Z",
-    "go_version": "go1.20.4"
+    "db_last_modified": "2023-07-11T19:19:08Z",
+    "go_version": "go1.20.6",
+    "scan_level": "symbol"
   }
 }
 {
   "progress": {
-    "message": "Scanning your code and 174 packages across 14 dependent modules for known vulnerabilities..."
+    "message": "Scanning your code and 173 packages across 14 dependent modules for known vulnerabilities..."
   }
 }
 {
   "osv": {
     "schema_version": "1.3.1",
     "id": "GO-2020-0003",
-    "modified": "2023-04-03T15:57:51Z",
+    "modified": "2023-06-12T18:45:41Z",
     "published": "2021-04-14T20:04:52Z",
     "aliases": [
       "CVE-2020-36568",
       "GHSA-hggr-p7v6-73p5"
     ],
+    "summary": "Resource exhaustion in github.com/revel/revel",
     "details": "An attacker can cause an application that accepts slice parameters (https://revel.github.io/manual/parameters.html#slices) to allocate large amounts of memory and crash through manipulating the request query sent to the application.",
     "affected": [
       {
@@ -85,6 +87,300 @@
         "module": "github.com/revel/revel",
         "version": "v0.21.0",
         "package": "github.com/revel/revel",
+        "function": "Len",
+        "receiver": "AcceptLanguages"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1752,
+          "line": 43,
+          "column": 15
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Less",
+        "receiver": "AcceptLanguages"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 2926,
+          "line": 108,
+          "column": 25
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Swap",
+        "receiver": "AcceptLanguages"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "insertionSort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 423,
+          "line": 13,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 1947,
+          "line": 73,
+          "column": 17
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
         "function": "AddInitEventHandler"
       },
       {
@@ -105,9 +401,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go",
           "offset": 0,
-          "line": 0,
-          "column": 0
+          "line": 1,
+          "column": 1
         }
       },
       {
@@ -115,9 +412,149 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Write",
+        "receiver": "*CompressResponseWriter"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "io",
+        "function": "WriteString",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/io/io.go",
+          "offset": 11303,
+          "line": 315,
+          "column": 16
+        }
+      },
+      {
+        "module": "gopkg.in/stack.v0",
+        "version": "v0.0.0-20141108040640-9b43fcefddd0",
+        "package": "gopkg.in/stack.v0",
+        "function": "Format",
+        "receiver": "Call",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go",
+          "offset": 3420,
+          "line": 119,
+          "column": 17
+        }
+      },
+      {
+        "module": "gopkg.in/stack.v0",
+        "version": "v0.0.0-20141108040640-9b43fcefddd0",
+        "package": "gopkg.in/stack.v0",
+        "function": "Format",
+        "receiver": "CallStack",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go",
+          "offset": 4808,
+          "line": 184,
+          "column": 12
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "handleMethods",
+        "receiver": "*pp",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go",
+          "offset": 17357,
+          "line": 640,
+          "column": 19
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "printArg",
+        "receiver": "*pp",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go",
+          "offset": 20093,
+          "line": 749,
+          "column": 22
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "doPrintf",
+        "receiver": "*pp",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go",
+          "offset": 28963,
+          "line": 1077,
+          "column": 16
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 890,
+          "line": 25,
+          "column": 12
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -137,12 +574,12 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "handleMethods",
         "receiver": "*pp",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go",
           "offset": 18244,
           "line": 667,
           "column": 24
@@ -150,12 +587,12 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "printArg",
         "receiver": "*pp",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go",
           "offset": 20093,
           "line": 749,
           "column": 22
@@ -163,12 +600,12 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "doPrintf",
         "receiver": "*pp",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go",
           "offset": 28963,
           "line": 1077,
           "column": 16
@@ -176,11 +613,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "Errorf",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
           "offset": 890,
           "line": 25,
           "column": 12
@@ -188,11 +625,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "html/template",
         "function": "init",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
           "offset": 926,
           "line": 34,
           "column": 26
@@ -204,9 +641,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
         }
       },
       {
@@ -214,9 +652,10 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -256,906 +695,6 @@
         "module": "github.com/revel/revel",
         "version": "v0.21.0",
         "package": "github.com/revel/revel",
-        "function": "Len",
-        "receiver": "RevelHooks"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1752,
-          "line": 43,
-          "column": 15
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Len",
-        "receiver": "reverseInterceptorItemList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1752,
-          "line": 43,
-          "column": 15
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Len",
-        "receiver": "interceptorItemList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1752,
-          "line": 43,
-          "column": 15
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Len",
-        "receiver": "ServerMuxList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1752,
-          "line": 43,
-          "column": 15
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Len",
-        "receiver": "AcceptLanguages"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1752,
-          "line": 43,
-          "column": 15
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Less",
-        "receiver": "RevelHooks"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 2926,
-          "line": 108,
-          "column": 25
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Less",
-        "receiver": "AcceptLanguages"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 2926,
-          "line": 108,
-          "column": 25
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Less",
-        "receiver": "ServerMuxList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 2926,
-          "line": 108,
-          "column": 25
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Less",
-        "receiver": "reverseInterceptorItemList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 2926,
-          "line": 108,
-          "column": 25
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Less",
-        "receiver": "interceptorItemList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 2926,
-          "line": 108,
-          "column": 25
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
         "function": "OnAppStart"
       },
       {
@@ -1176,9 +715,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go",
           "offset": 0,
-          "line": 0,
-          "column": 0
+          "line": 1,
+          "column": 1
         }
       },
       {
@@ -1186,9 +726,10 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -1223,9 +764,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go",
           "offset": 0,
-          "line": 0,
-          "column": 0
+          "line": 1,
+          "column": 1
         }
       },
       {
@@ -1233,9 +775,194 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Len",
+        "receiver": "RevelHooks"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1752,
+          "line": 43,
+          "column": 15
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Less",
+        "receiver": "RevelHooks"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 2926,
+          "line": 108,
+          "column": 25
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -1255,11 +982,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "insertionSort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
           "offset": 423,
           "line": 13,
           "column": 13
@@ -1267,11 +994,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "pdqsort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
           "offset": 1947,
           "line": 73,
           "column": 17
@@ -1279,11 +1006,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "Sort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
           "offset": 1816,
           "line": 48,
           "column": 9
@@ -1291,11 +1018,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "Ints",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
           "offset": 5052,
           "line": 157,
           "column": 26
@@ -1303,11 +1030,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "Errorf",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
           "offset": 1124,
           "line": 37,
           "column": 13
@@ -1315,11 +1042,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "html/template",
         "function": "init",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
           "offset": 926,
           "line": 34,
           "column": 26
@@ -1331,9 +1058,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
         }
       },
       {
@@ -1341,9 +1069,10 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -1358,52 +1087,28 @@
         "module": "github.com/revel/revel",
         "version": "v0.21.0",
         "package": "github.com/revel/revel",
-        "function": "Swap",
-        "receiver": "reverseInterceptorItemList"
+        "function": "Len",
+        "receiver": "ServerMuxList"
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "insertionSort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 423,
-          "line": 13,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 1947,
-          "line": 73,
-          "column": 17
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "Sort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1752,
+          "line": 43,
+          "column": 15
         }
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "Ints",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
           "offset": 5052,
           "line": 157,
           "column": 26
@@ -1411,11 +1116,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "Errorf",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
           "offset": 1124,
           "line": 37,
           "column": 13
@@ -1423,11 +1128,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "html/template",
         "function": "init",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
           "offset": 926,
           "line": 34,
           "column": 26
@@ -1439,9 +1144,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
         }
       },
       {
@@ -1449,9 +1155,108 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Less",
+        "receiver": "ServerMuxList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 2926,
+          "line": 108,
+          "column": 25
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -1471,11 +1276,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "insertionSort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
           "offset": 423,
           "line": 13,
           "column": 13
@@ -1483,11 +1288,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "pdqsort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
           "offset": 1947,
           "line": 73,
           "column": 17
@@ -1495,11 +1300,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "Sort",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
           "offset": 1816,
           "line": 48,
           "column": 9
@@ -1507,11 +1312,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "sort",
         "function": "Ints",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
           "offset": 5052,
           "line": 157,
           "column": 26
@@ -1519,11 +1324,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "fmt",
         "function": "Errorf",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
           "offset": 1124,
           "line": 37,
           "column": 13
@@ -1531,11 +1336,11 @@
       },
       {
         "module": "stdlib",
-        "version": "v1.20.4",
+        "version": "v1.20.6",
         "package": "html/template",
         "function": "init",
         "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
           "offset": 926,
           "line": 34,
           "column": 26
@@ -1547,9 +1352,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
         }
       },
       {
@@ -1557,225 +1363,10 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Swap",
-        "receiver": "AcceptLanguages"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "insertionSort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 423,
-          "line": 13,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 1947,
-          "line": 73,
-          "column": 17
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Swap",
-        "receiver": "interceptorItemList"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "insertionSort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 423,
-          "line": 13,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "pdqsort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go",
-          "offset": 1947,
-          "line": 73,
-          "column": 17
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Sort",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 1816,
-          "line": 48,
-          "column": 9
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "sort",
-        "function": "Ints",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go",
-          "offset": 5052,
-          "line": 157,
-          "column": 26
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 1124,
-          "line": 37,
-          "column": 13
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -1809,146 +1400,10 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      }
-    ]
-  }
-}
-{
-  "finding": {
-    "osv": "GO-2020-0003",
-    "fixed_version": "v1.0.0",
-    "trace": [
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "Write",
-        "receiver": "*CompressResponseWriter"
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "io",
-        "function": "WriteString",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/io/io.go",
-          "offset": 11303,
-          "line": 315,
-          "column": 16
-        }
-      },
-      {
-        "module": "gopkg.in/stack.v0",
-        "version": "v0.0.0-20141108040640-9b43fcefddd0",
-        "package": "gopkg.in/stack.v0",
-        "function": "Format",
-        "receiver": "Call",
-        "position": {
-          "filename": "/Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go",
-          "offset": 3420,
-          "line": 119,
-          "column": 17
-        }
-      },
-      {
-        "module": "gopkg.in/stack.v0",
-        "version": "v0.0.0-20141108040640-9b43fcefddd0",
-        "package": "gopkg.in/stack.v0",
-        "function": "Format",
-        "receiver": "CallStack",
-        "position": {
-          "filename": "/Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go",
-          "offset": 4808,
-          "line": 184,
-          "column": 12
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "handleMethods",
-        "receiver": "*pp",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
-          "offset": 17357,
-          "line": 640,
-          "column": 19
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "printArg",
-        "receiver": "*pp",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
-          "offset": 20093,
-          "line": 749,
-          "column": 22
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "doPrintf",
-        "receiver": "*pp",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go",
-          "offset": 28963,
-          "line": 1077,
-          "column": 16
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "fmt",
-        "function": "Errorf",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go",
-          "offset": 890,
-          "line": 25,
-          "column": 12
-        }
-      },
-      {
-        "module": "stdlib",
-        "version": "v1.20.4",
-        "package": "html/template",
-        "function": "init",
-        "position": {
-          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go",
-          "offset": 926,
-          "line": 34,
-          "column": 26
-        }
-      },
-      {
-        "module": "github.com/revel/revel",
-        "version": "v0.21.0",
-        "package": "github.com/revel/revel",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
-        }
-      },
-      {
-        "module": "github.com/julieqiu/govulncheck/module10",
-        "package": "github.com/julieqiu/govulncheck/module10",
-        "function": "init",
-        "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]
@@ -1983,9 +1438,10 @@
         "package": "github.com/revel/revel",
         "function": "init",
         "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go",
           "offset": 0,
-          "line": 0,
-          "column": 0
+          "line": 1,
+          "column": 1
         }
       },
       {
@@ -1993,9 +1449,598 @@
         "package": "github.com/julieqiu/govulncheck/module10",
         "function": "init",
         "position": {
-          "offset": 0,
-          "line": 0,
-          "column": 0
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Len",
+        "receiver": "interceptorItemList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1752,
+          "line": 43,
+          "column": 15
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Less",
+        "receiver": "interceptorItemList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 2926,
+          "line": 108,
+          "column": 25
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Swap",
+        "receiver": "interceptorItemList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "insertionSort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 423,
+          "line": 13,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 1947,
+          "line": 73,
+          "column": 17
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Len",
+        "receiver": "reverseInterceptorItemList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1752,
+          "line": 43,
+          "column": 15
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Less",
+        "receiver": "reverseInterceptorItemList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 2926,
+          "line": 108,
+          "column": 25
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
+        }
+      }
+    ]
+  }
+}
+{
+  "finding": {
+    "osv": "GO-2020-0003",
+    "fixed_version": "v1.0.0",
+    "trace": [
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "Swap",
+        "receiver": "reverseInterceptorItemList"
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "insertionSort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 423,
+          "line": 13,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "pdqsort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go",
+          "offset": 1947,
+          "line": 73,
+          "column": 17
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Sort",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 1816,
+          "line": 48,
+          "column": 9
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "sort",
+        "function": "Ints",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go",
+          "offset": 5052,
+          "line": 157,
+          "column": 26
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "fmt",
+        "function": "Errorf",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go",
+          "offset": 1124,
+          "line": 37,
+          "column": 13
+        }
+      },
+      {
+        "module": "stdlib",
+        "version": "v1.20.6",
+        "package": "html/template",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go",
+          "offset": 926,
+          "line": 34,
+          "column": 26
+        }
+      },
+      {
+        "module": "github.com/revel/revel",
+        "version": "v0.21.0",
+        "package": "github.com/revel/revel",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go",
+          "offset": 228,
+          "line": 9,
+          "column": 2
+        }
+      },
+      {
+        "module": "github.com/julieqiu/govulncheck/module10",
+        "package": "github.com/julieqiu/govulncheck/module10",
+        "function": "init",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module10/main.go",
+          "offset": 21,
+          "line": 3,
+          "column": 8
         }
       }
     ]

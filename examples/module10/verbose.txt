@@ -1,296 +1,198 @@
-govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+Using go1.20.6 and govulncheck@v0.2.1-0.20230713045519-f69de671333b with vulnerability data from https://vuln.go.dev (last modified 2023-07-11 19:19:08 +0000 UTC).
 
-Using go1.20.4 and govulncheck@v0.0.0 with
-vulnerability data from https://vuln.go.dev (last modified 2023-05-11 18:59:56 +0000 UTC).
-
-Scanning your code and 174 packages across 14 dependent modules for known vulnerabilities...
-Your code is affected by 1 vulnerability from 1 module.
+Scanning your code and 173 packages across 14 dependent modules for known vulnerabilities...
 
 Vulnerability #1: GO-2020-0003
-    An attacker can cause an application that accepts slice
-    parameters
-    (https://revel.github.io/manual/parameters.html#slices) to
-    allocate large amounts of memory and crash through manipulating
-    the request query sent to the application.
+    Resource exhaustion in github.com/revel/revel
   More info: https://pkg.go.dev/vuln/GO-2020-0003
   Module: github.com/revel/revel
     Found in: github.com/revel/revel@v0.21.0
     Fixed in: github.com/revel/revel@v1.0.0
-    Call stacks in your code:
-      #1: for function AddInitEventHandler
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        github.com/revel/revel.init#10
-            /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/template_adapter_go.go:14:21
-        github.com/revel/revel.AddInitEventHandler
-      #2: for function *Error.Error
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:25:12
-        fmt.pp.doPrintf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go:1077:16
-        fmt.pp.printArg
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go:749:22
-        fmt.pp.handleMethods
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go:667:24
-        github.com/revel/revel.Error.Error
-      #2: for function InitServer
-        github.com/julieqiu/govulncheck/module10.main
-            main.go:6:18
-        github.com/revel/revel.InitServer
-      #2: for function RevelHooks.Len
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:43:15
-        github.com/revel/revel.RevelHooks.Len
-      #2: for function reverseInterceptorItemList.Len
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:43:15
-        github.com/revel/revel.reverseInterceptorItemList.Len
-      #2: for function interceptorItemList.Len
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:43:15
-        github.com/revel/revel.interceptorItemList.Len
-      #2: for function ServerMuxList.Len
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:43:15
-        github.com/revel/revel.ServerMuxList.Len
-      #2: for function AcceptLanguages.Len
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:43:15
+    Example traces found:
+      #1: for function github.com/revel/revel.AcceptLanguages.Len
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:43:15: sort.Sort
         github.com/revel/revel.AcceptLanguages.Len
-      #2: for function RevelHooks.Less
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:108:25
-        github.com/revel/revel.RevelHooks.Less
-      #2: for function AcceptLanguages.Less
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:108:25
+      #2: for function github.com/revel/revel.AcceptLanguages.Less
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:108:25: sort.pdqsort
         github.com/revel/revel.AcceptLanguages.Less
-      #2: for function ServerMuxList.Less
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:108:25
-        github.com/revel/revel.ServerMuxList.Less
-      #2: for function reverseInterceptorItemList.Less
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:108:25
-        github.com/revel/revel.reverseInterceptorItemList.Less
-      #2: for function interceptorItemList.Less
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:108:25
-        github.com/revel/revel.interceptorItemList.Less
-      #2: for function OnAppStart
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        github.com/revel/revel.init#9
-            /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/session_engine.go:18:12
-        github.com/revel/revel.OnAppStart
-      #2: for function RegisterSessionEngine
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        github.com/revel/revel.init#8
-            /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/session_adapter_cookie.go:26:23
-        github.com/revel/revel.RegisterSessionEngine
-      #2: for function RevelHooks.Swap
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:73:17
-        sort.insertionSort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:13:13
-        github.com/revel/revel.RevelHooks.Swap
-      #2: for function reverseInterceptorItemList.Swap
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:73:17
-        sort.insertionSort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:13:13
-        github.com/revel/revel.reverseInterceptorItemList.Swap
-      #2: for function ServerMuxList.Swap
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:73:17
-        sort.insertionSort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:13:13
-        github.com/revel/revel.ServerMuxList.Swap
-      #2: for function AcceptLanguages.Swap
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:73:17
-        sort.insertionSort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:13:13
+      #3: for function github.com/revel/revel.AcceptLanguages.Swap
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:73:17: sort.pdqsort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:13:13: sort.insertionSort
         github.com/revel/revel.AcceptLanguages.Swap
-      #2: for function interceptorItemList.Swap
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:37:13
-        sort.Ints
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:157:26
-        sort.Sort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/sort.go:48:9
-        sort.pdqsort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:73:17
-        sort.insertionSort
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/sort/zsortinterface.go:13:13
-        github.com/revel/revel.interceptorItemList.Swap
-      #2: for function ValueBinder
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-            /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/binder.go:82:20
-        github.com/revel/revel.ValueBinder
-      #2: for function *CompressResponseWriter.Write
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        html/template.init
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/html/template/template.go:34:26
-        fmt.Errorf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/errors.go:25:12
-        fmt.pp.doPrintf
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go:1077:16
-        fmt.pp.printArg
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go:749:22
-        fmt.pp.handleMethods
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/fmt/print.go:640:19
-        gopkg.in/stack.v0.CallStack.Format
-            /Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go:184:12
-        gopkg.in/stack.v0.Call.Format
-            /Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go:119:17
-        io.WriteString
-            /Users/julieqiu/bin/homebrew/Cellar/go/1.20.4/libexec/src/io/io.go:315:16
+      #4: for function github.com/revel/revel.AddInitEventHandler
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go:1:1: github.com/revel/revel.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/template_adapter_go.go:14:21: github.com/revel/revel.init#10
+        github.com/revel/revel.AddInitEventHandler
+      #5: for function github.com/revel/revel.CompressResponseWriter.Write
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:25:12: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go:1077:16: fmt.pp.doPrintf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go:749:22: fmt.pp.printArg
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go:640:19: fmt.pp.handleMethods
+        /Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go:184:12: gopkg.in/stack.v0.CallStack.Format
+        /Users/julieqiu/go/pkg/mod/gopkg.in/stack.v0@v0.0.0-20141108040640-9b43fcefddd0/stack.go:119:17: gopkg.in/stack.v0.Call.Format
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/io/io.go:315:16: io.WriteString
         github.com/revel/revel.CompressResponseWriter.Write
-      #2: for function initLoggers
-        github.com/julieqiu/govulncheck/module10.init
-        github.com/revel/revel.init
-        github.com/revel/revel.init#3
-            /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/logger.go:37:13
+      #6: for function github.com/revel/revel.Error.Error
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:25:12: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go:1077:16: fmt.pp.doPrintf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go:749:22: fmt.pp.printArg
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/print.go:667:24: fmt.pp.handleMethods
+        github.com/revel/revel.Error.Error
+      #7: for function github.com/revel/revel.InitServer
+        main.go:6:18: github.com/julieqiu/govulncheck/module10.main
+        github.com/revel/revel.InitServer
+      #8: for function github.com/revel/revel.OnAppStart
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go:1:1: github.com/revel/revel.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/session_engine.go:18:12: github.com/revel/revel.init#9
+        github.com/revel/revel.OnAppStart
+      #9: for function github.com/revel/revel.RegisterSessionEngine
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go:1:1: github.com/revel/revel.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/session_adapter_cookie.go:26:23: github.com/revel/revel.init#8
+        github.com/revel/revel.RegisterSessionEngine
+      #10: for function github.com/revel/revel.RevelHooks.Len
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:43:15: sort.Sort
+        github.com/revel/revel.RevelHooks.Len
+      #11: for function github.com/revel/revel.RevelHooks.Less
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:108:25: sort.pdqsort
+        github.com/revel/revel.RevelHooks.Less
+      #12: for function github.com/revel/revel.RevelHooks.Swap
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:73:17: sort.pdqsort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:13:13: sort.insertionSort
+        github.com/revel/revel.RevelHooks.Swap
+      #13: for function github.com/revel/revel.ServerMuxList.Len
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:43:15: sort.Sort
+        github.com/revel/revel.ServerMuxList.Len
+      #14: for function github.com/revel/revel.ServerMuxList.Less
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:108:25: sort.pdqsort
+        github.com/revel/revel.ServerMuxList.Less
+      #15: for function github.com/revel/revel.ServerMuxList.Swap
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:73:17: sort.pdqsort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:13:13: sort.insertionSort
+        github.com/revel/revel.ServerMuxList.Swap
+      #16: for function github.com/revel/revel.ValueBinder
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/binder.go:82:20: github.com/revel/revel.init
+        github.com/revel/revel.ValueBinder
+      #17: for function github.com/revel/revel.initLoggers
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/before_after_filter.go:1:1: github.com/revel/revel.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/logger.go:37:13: github.com/revel/revel.init#3
         github.com/revel/revel.initLoggers
+      #18: for function github.com/revel/revel.interceptorItemList.Len
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:43:15: sort.Sort
+        github.com/revel/revel.interceptorItemList.Len
+      #19: for function github.com/revel/revel.interceptorItemList.Less
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:108:25: sort.pdqsort
+        github.com/revel/revel.interceptorItemList.Less
+      #20: for function github.com/revel/revel.interceptorItemList.Swap
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:73:17: sort.pdqsort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:13:13: sort.insertionSort
+        github.com/revel/revel.interceptorItemList.Swap
+      #21: for function github.com/revel/revel.reverseInterceptorItemList.Len
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:43:15: sort.Sort
+        github.com/revel/revel.reverseInterceptorItemList.Len
+      #22: for function github.com/revel/revel.reverseInterceptorItemList.Less
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:108:25: sort.pdqsort
+        github.com/revel/revel.reverseInterceptorItemList.Less
+      #23: for function github.com/revel/revel.reverseInterceptorItemList.Swap
+        main.go:3:8: github.com/julieqiu/govulncheck/module10.init
+        /Users/julieqiu/go/pkg/mod/github.com/revel/revel@v0.21.0/i18n.go:9:2: github.com/revel/revel.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/html/template/template.go:34:26: html/template.init
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/fmt/errors.go:37:13: fmt.Errorf
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:157:26: sort.Ints
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/sort.go:48:9: sort.Sort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:73:17: sort.pdqsort
+        /Users/julieqiu/bin/homebrew/Cellar/go/1.20.6/libexec/src/sort/zsortinterface.go:13:13: sort.insertionSort
+        github.com/revel/revel.reverseInterceptorItemList.Swap
+
+Your code is affected by 1 vulnerability from 1 module.
+
+Share feedback at https://go.dev/s/govulncheck-feedback.

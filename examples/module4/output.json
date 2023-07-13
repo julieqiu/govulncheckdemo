@@ -1,11 +1,12 @@
 {
   "config": {
-    "protocol_version": "v0.1.0",
+    "protocol_version": "v1.0.0",
     "scanner_name": "govulncheck",
-    "scanner_version": "v0.0.0",
+    "scanner_version": "v0.2.1-0.20230713045519-f69de671333b",
     "db": "https://vuln.go.dev",
-    "db_last_modified": "2023-05-11T18:59:56Z",
-    "go_version": "go1.20.4"
+    "db_last_modified": "2023-07-11T19:19:08Z",
+    "go_version": "go1.20.6",
+    "scan_level": "symbol"
   }
 }
 {
@@ -17,12 +18,13 @@
   "osv": {
     "schema_version": "1.3.1",
     "id": "GO-2021-0076",
-    "modified": "2023-04-03T15:57:51Z",
+    "modified": "2023-06-12T18:45:41Z",
     "published": "2021-04-14T20:04:52Z",
     "aliases": [
       "CVE-2018-14632",
       "GHSA-gxhv-3hwf-wjp9"
     ],
+    "summary": "Out-of-bounds write in github.com/evanphx/json-patch",
     "details": "A malicious JSON patch can cause a panic due to an out-of-bounds write attempt. This can be used as a denial of service vector if exposed to arbitrary user input.",
     "affected": [
       {
@@ -41,10 +43,10 @@
                 "fixed": "0.5.2"
               },
               {
-                "introduced": "3.0.0"
+                "introduced": "3.0.0+incompatible"
               },
               {
-                "fixed": "3.0.1-0.20180525145409-4c9aadca8f89"
+                "fixed": "3.0.1-0.20180525145409-4c9aadca8f89+incompatible"
               }
             ]
           }
@@ -81,7 +83,7 @@
 {
   "finding": {
     "osv": "GO-2021-0076",
-    "fixed_version": "v3.0.1-0.20180525145409-4c9aadca8f89",
+    "fixed_version": "v3.0.1-0.20180525145409-4c9aadca8f89+incompatible",
     "trace": [
       {
         "module": "github.com/evanphx/json-patch",
@@ -108,12 +110,13 @@
   "osv": {
     "schema_version": "1.3.1",
     "id": "GO-2020-0015",
-    "modified": "2023-04-03T15:57:51Z",
+    "modified": "2023-06-12T18:45:41Z",
     "published": "2021-04-14T20:04:52Z",
     "aliases": [
       "CVE-2020-14040",
       "GHSA-5rcv-m4m3-hfh7"
     ],
+    "summary": "Infinite loop when decoding some inputs in golang.org/x/text",
     "details": "An attacker could provide a single byte to a UTF16 decoder instantiated with UseBOM or ExpectBOM to trigger an infinite loop if the String function on the Decoder is called, or the Decoder is passed to transform.String. If used to parse user supplied input, this may be used as a denial of service vector.",
     "affected": [
       {
@@ -173,7 +176,10 @@
     ],
     "credits": [
       {
-        "name": "@abacabadabacaba and Anton Gyllenberg"
+        "name": "@abacabadabacaba"
+      },
+      {
+        "name": "Anton Gyllenberg"
       }
     ],
     "database_specific": {

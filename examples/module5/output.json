@@ -1,11 +1,12 @@
 {
   "config": {
-    "protocol_version": "v0.1.0",
+    "protocol_version": "v1.0.0",
     "scanner_name": "govulncheck",
-    "scanner_version": "v0.0.0",
+    "scanner_version": "v0.2.1-0.20230713045519-f69de671333b",
     "db": "https://vuln.go.dev",
-    "db_last_modified": "2023-05-11T18:59:56Z",
-    "go_version": "go1.20.4"
+    "db_last_modified": "2023-07-11T19:19:08Z",
+    "go_version": "go1.20.6",
+    "scan_level": "symbol"
   }
 }
 {
@@ -16,14 +17,15 @@
 {
   "osv": {
     "schema_version": "1.3.1",
-    "id": "GO-2022-1059",
-    "modified": "2023-04-03T15:57:51Z",
-    "published": "2022-10-11T18:16:24Z",
+    "id": "GO-2021-0113",
+    "modified": "2023-06-12T18:45:41Z",
+    "published": "2021-10-06T17:51:21Z",
     "aliases": [
-      "CVE-2022-32149",
-      "GHSA-69ch-w2m2-3vjp"
+      "CVE-2021-38561",
+      "GHSA-ppp9-7jff-5vj2"
     ],
-    "details": "An attacker may cause a denial of service by crafting an Accept-Language header which ParseAcceptLanguage will take significant time to parse.",
+    "summary": "Out-of-bounds read in golang.org/x/text/language",
+    "details": "Due to improper index calculation, an incorrectly formatted language tag can cause Parse to panic via an out of bounds read. If Parse is used to process untrusted user inputs, this may be used as a vector for a denial of service attack.",
     "affected": [
       {
         "package": {
@@ -38,7 +40,7 @@
                 "introduced": "0"
               },
               {
-                "fixed": "0.3.8"
+                "fixed": "0.3.7"
               }
             ]
           }
@@ -49,6 +51,8 @@
               "path": "golang.org/x/text/language",
               "symbols": [
                 "MatchStrings",
+                "MustParse",
+                "Parse",
                 "ParseAcceptLanguage"
               ]
             }
@@ -58,37 +62,45 @@
     ],
     "references": [
       {
-        "type": "REPORT",
-        "url": "https://go.dev/issue/56152"
+        "type": "FIX",
+        "url": "https://go.dev/cl/340830"
       },
       {
         "type": "FIX",
-        "url": "https://go.dev/cl/442235"
-      },
-      {
-        "type": "WEB",
-        "url": "https://groups.google.com/g/golang-announce/c/-hjNw559_tE/m/KlGTfid5CAAJ"
+        "url": "https://go.googlesource.com/text/+/383b2e75a7a4198c42f8f87833eefb772868a56f"
       }
     ],
     "credits": [
       {
-        "name": "Adam Korczynski (ADA Logics) and OSS-Fuzz"
+        "name": "Guido Vranken"
       }
     ],
     "database_specific": {
-      "url": "https://pkg.go.dev/vuln/GO-2022-1059"
+      "url": "https://pkg.go.dev/vuln/GO-2021-0113"
     }
   }
 }
 {
   "finding": {
-    "osv": "GO-2022-1059",
-    "fixed_version": "v0.3.8",
+    "osv": "GO-2021-0113",
+    "fixed_version": "v0.3.7",
     "trace": [
       {
         "module": "golang.org/x/text",
         "version": "v0.3.5",
-        "package": "golang.org/x/text/language"
+        "package": "golang.org/x/text/language",
+        "function": "Parse"
+      },
+      {
+        "module": "github.com/julieqiu/govulncheckdemo/module5",
+        "package": "github.com/julieqiu/govulncheckdemo/module5",
+        "function": "main",
+        "position": {
+          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module5/main.go",
+          "offset": 258,
+          "line": 16,
+          "column": 29
+        }
       }
     ]
   }
@@ -97,7 +109,7 @@
   "osv": {
     "schema_version": "1.3.1",
     "id": "GO-2021-0265",
-    "modified": "2023-04-03T15:57:51Z",
+    "modified": "2023-06-12T18:45:41Z",
     "published": "2022-08-15T18:06:07Z",
     "aliases": [
       "CVE-2021-42248",
@@ -105,6 +117,7 @@
       "GHSA-c9gm-7rfj-8w5h",
       "GHSA-ppj4-34rq-v8j9"
     ],
+    "summary": "Denial of service in github.com/tidwall/gjson",
     "details": "A maliciously crafted path can cause Get and other query functions to consume excessive amounts of CPU and time.",
     "affected": [
       {
@@ -182,14 +195,15 @@
 {
   "osv": {
     "schema_version": "1.3.1",
-    "id": "GO-2021-0113",
-    "modified": "2023-04-03T15:57:51Z",
-    "published": "2021-10-06T17:51:21Z",
+    "id": "GO-2022-1059",
+    "modified": "2023-06-12T18:45:41Z",
+    "published": "2022-10-11T18:16:24Z",
     "aliases": [
-      "CVE-2021-38561",
-      "GHSA-ppp9-7jff-5vj2"
+      "CVE-2022-32149",
+      "GHSA-69ch-w2m2-3vjp"
     ],
-    "details": "Due to improper index calculation, an incorrectly formatted language tag can cause Parse to panic via an out of bounds read. If Parse is used to process untrusted user inputs, this may be used as a vector for a denial of service attack.",
+    "summary": "Denial of service via crafted Accept-Language header in golang.org/x/text/language",
+    "details": "An attacker may cause a denial of service by crafting an Accept-Language header which ParseAcceptLanguage will take significant time to parse.",
     "affected": [
       {
         "package": {
@@ -204,7 +218,7 @@
                 "introduced": "0"
               },
               {
-                "fixed": "0.3.7"
+                "fixed": "0.3.8"
               }
             ]
           }
@@ -215,8 +229,6 @@
               "path": "golang.org/x/text/language",
               "symbols": [
                 "MatchStrings",
-                "MustParse",
-                "Parse",
                 "ParseAcceptLanguage"
               ]
             }
@@ -226,45 +238,40 @@
     ],
     "references": [
       {
-        "type": "FIX",
-        "url": "https://go.dev/cl/340830"
+        "type": "REPORT",
+        "url": "https://go.dev/issue/56152"
       },
       {
         "type": "FIX",
-        "url": "https://go.googlesource.com/text/+/383b2e75a7a4198c42f8f87833eefb772868a56f"
+        "url": "https://go.dev/cl/442235"
+      },
+      {
+        "type": "WEB",
+        "url": "https://groups.google.com/g/golang-announce/c/-hjNw559_tE/m/KlGTfid5CAAJ"
       }
     ],
     "credits": [
       {
-        "name": "Guido Vranken"
+        "name": "Adam Korczynski (ADA Logics)"
+      },
+      {
+        "name": "OSS-Fuzz"
       }
     ],
     "database_specific": {
-      "url": "https://pkg.go.dev/vuln/GO-2021-0113"
+      "url": "https://pkg.go.dev/vuln/GO-2022-1059"
     }
   }
 }
 {
   "finding": {
-    "osv": "GO-2021-0113",
-    "fixed_version": "v0.3.7",
+    "osv": "GO-2022-1059",
+    "fixed_version": "v0.3.8",
     "trace": [
       {
         "module": "golang.org/x/text",
         "version": "v0.3.5",
-        "package": "golang.org/x/text/language",
-        "function": "Parse"
-      },
-      {
-        "module": "github.com/julieqiu/govulncheckdemo/module5",
-        "package": "github.com/julieqiu/govulncheckdemo/module5",
-        "function": "main",
-        "position": {
-          "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module5/main.go",
-          "offset": 258,
-          "line": 16,
-          "column": 29
-        }
+        "package": "golang.org/x/text/language"
       }
     ]
   }

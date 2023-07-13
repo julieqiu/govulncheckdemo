@@ -1,20 +1,18 @@
-govulncheck is an experimental tool. Share feedback at https://go.dev/s/govulncheck-feedback.
+Using go1.20.6 and govulncheck@v0.2.1-0.20230713045519-f69de671333b with vulnerability data from https://vuln.go.dev (last modified 2023-07-11 19:19:08 +0000 UTC).
 
-Using go1.20.4 and govulncheck@v0.0.0 with
-vulnerability data from https://vuln.go.dev (last modified 2023-05-11 18:59:56 +0000 UTC).
-
-Scanning your code and 128 packages across 1 dependent module for known vulnerabilities...
-Your code is affected by 1 vulnerability from 1 module.
+Scanning your code and 127 packages across 1 dependent module for known vulnerabilities...
 
 Vulnerability #1: GO-2020-0040
-    Due to unchecked type assertions, maliciously crafted messages
-    can cause panics, which may be used as a denial of service
-    vector.
+    Uncontrolled Resource Consumption in github.com/shiyanhui/dht
   More info: https://pkg.go.dev/vuln/GO-2020-0040
   Module: github.com/shiyanhui/dht
     Found in: github.com/shiyanhui/dht@v0.0.0-20201219151056-5a20f3199263
     Fixed in: N/A
-    Call stacks in your code:
-      main.go:28:21: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.GetPeers
-      main.go:14:14: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.New
-      main.go:42:7: github.com/julieqiu/govulncheckdemo/module3.main calls github.com/shiyanhui/dht.DHT.Run
+    Example traces found:
+      #1: main.go:28:21: module3.main calls dht.DHT.GetPeers
+      #2: main.go:42:7: module3.main calls dht.DHT.Run
+      #3: main.go:14:14: module3.main calls dht.New
+
+Your code is affected by 1 vulnerability from 1 module.
+
+Share feedback at https://go.dev/s/govulncheck-feedback.

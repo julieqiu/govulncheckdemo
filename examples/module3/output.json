@@ -1,28 +1,30 @@
 {
   "config": {
-    "protocol_version": "v0.1.0",
+    "protocol_version": "v1.0.0",
     "scanner_name": "govulncheck",
-    "scanner_version": "v0.0.0",
+    "scanner_version": "v0.2.1-0.20230713045519-f69de671333b",
     "db": "https://vuln.go.dev",
-    "db_last_modified": "2023-05-11T18:59:56Z",
-    "go_version": "go1.20.4"
+    "db_last_modified": "2023-07-11T19:19:08Z",
+    "go_version": "go1.20.6",
+    "scan_level": "symbol"
   }
 }
 {
   "progress": {
-    "message": "Scanning your code and 128 packages across 1 dependent module for known vulnerabilities..."
+    "message": "Scanning your code and 127 packages across 1 dependent module for known vulnerabilities..."
   }
 }
 {
   "osv": {
     "schema_version": "1.3.1",
     "id": "GO-2020-0040",
-    "modified": "2023-04-03T15:57:51Z",
+    "modified": "2023-06-12T18:45:41Z",
     "published": "2021-04-14T20:04:52Z",
     "aliases": [
       "CVE-2020-36562",
       "GHSA-p6fg-723f-hgpw"
     ],
+    "summary": "Uncontrolled Resource Consumption in github.com/shiyanhui/dht",
     "details": "Due to unchecked type assertions, maliciously crafted messages can cause panics, which may be used as a denial of service vector.",
     "affected": [
       {
@@ -109,7 +111,8 @@
         "module": "github.com/shiyanhui/dht",
         "version": "v0.0.0-20201219151056-5a20f3199263",
         "package": "github.com/shiyanhui/dht",
-        "function": "New"
+        "function": "Run",
+        "receiver": "*DHT"
       },
       {
         "module": "github.com/julieqiu/govulncheckdemo/module3",
@@ -117,9 +120,9 @@
         "function": "main",
         "position": {
           "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-          "offset": 160,
-          "line": 14,
-          "column": 14
+          "offset": 679,
+          "line": 42,
+          "column": 7
         }
       }
     ]
@@ -133,8 +136,7 @@
         "module": "github.com/shiyanhui/dht",
         "version": "v0.0.0-20201219151056-5a20f3199263",
         "package": "github.com/shiyanhui/dht",
-        "function": "Run",
-        "receiver": "*DHT"
+        "function": "New"
       },
       {
         "module": "github.com/julieqiu/govulncheckdemo/module3",
@@ -142,9 +144,9 @@
         "function": "main",
         "position": {
           "filename": "/Users/julieqiu/code/govulncheckdemo/examples/module3/main.go",
-          "offset": 679,
-          "line": 42,
-          "column": 7
+          "offset": 160,
+          "line": 14,
+          "column": 14
         }
       }
     ]
